@@ -105,7 +105,9 @@ class DiceGame extends React.Component {
                     <div>
                         <Player  name={'Player1'}
                                  curentScore={this.state.player1.currentScore}
-                                 totalScore ={this.state.player1.totalScore} />
+                                 totalScore ={this.state.player1.totalScore}
+                                 isTurn ={this.state.player1.isTurn}
+                        />
                     </div>
                         <div>
                            <Ui/>
@@ -117,7 +119,9 @@ class DiceGame extends React.Component {
                     <div className=''>
                         <Player name={'Player2'}
                                 curentScore={this.state.player2.currentScore}
-                                totalScore ={this.state.player2.totalScore} />
+                                totalScore ={this.state.player2.totalScore}
+                                isTurn ={this.state.player2.isTurn}
+                        />
                     </div>
                 </div>
             </div>
