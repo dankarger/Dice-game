@@ -1,8 +1,11 @@
 import React from "react";
 import Player from "../Components/Player/Player";
 import Ui from "../Components/Ui/Ui";
-
+import Dices from "../Components/Dice/Dice";
 import './DiceGame.css'
+
+
+
 
 class DiceGame extends React.Component {
     state = {
@@ -10,12 +13,14 @@ class DiceGame extends React.Component {
         targetScore:20,
         dicesResult:[null,null],
         currentTurnResult:null,
-        player1:{
+        player1: {
+            name:'Player1',
             currentScore:0,
             totalScore:0,
             isTurn:true
         },
-        player2:{
+        player2: {
+            name:'Player2',
             currentScore:0,
             totalScore:0,
             isTurn:false
@@ -23,11 +28,14 @@ class DiceGame extends React.Component {
     }
 
     player1Object={
+        name:'Player1',
         currentScore:0,
         totalScore:0,
         isTurn:true
     }
+
     player2Object={
+        name:'Player2',
         currentScore:0,
         totalScore:0,
         isTurn:false
@@ -58,17 +66,12 @@ class DiceGame extends React.Component {
     handleRollDices= () => {
             let result =  [this.getRandomNumber(),this.getRandomNumber()];
             const currentPlayer = this.getCurrentPlayer()
-
-            const resultSum = result[0]+result[1];
-             currentPlayer.currentScore=resultSum;
+            currentPlayer.currentScore= result[0]+result[1];;
             this.setState(
             {dicesResult:result}
            )
             this.updatePlayersStates()
-           // this.updateScore(currentPlayer,resultSum)
          }
-
-
 
     handleHoldTurn = () => {
         let result= this.state.dicesResult[0]+this.state.dicesResult[1];
@@ -77,9 +80,9 @@ class DiceGame extends React.Component {
         currentPlayer.totalScore += result
         this.setState((prevState)=>{
             return {
-                currentTurnResult:prevState.result,
+                 currentTurnResult:prevState.result,
                  player1:this.player1Object,
-                player2:this.player2Object,
+                 player2:this.player2Object,
                  dicesResult:[0,0]
                 }
             }
@@ -87,44 +90,31 @@ class DiceGame extends React.Component {
         this.switchTurn()
     }
 
-    // updateScore = (player,result) =>{
-    //     player.currentScore = result;
-    //     this.setState((prevState)=>{
-    //         return {
-    //             currentTurnResult:result,
-    //             // player1:player
-    //         }
-    //     })
-    //
-    // }
-
     componentDidMount() {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('this turn result',this.state.player1)
-        console.log('cuuur',this.state.player1.currentScore)
-        // this.updateScore(this.player1Object)
-        console.log('1',this.state.player1,'2',this.state.player2)
+
     }
 
     render(){
         return(
             <div className='DiceGame-content '>
+                <h1>Current Player Turn:{this.getCurrentPlayer().name} </h1>
                 <div className="DiceGame-board-div flex">
                     <div>
                         <Player  name={'Player1'}
                                  curentScore={this.state.player1.currentScore}
-                                 totalScore ={this.state.player1.totalScore}
-                        />
+                                 totalScore ={this.state.player1.totalScore} />
                     </div>
                         <div>
                            <Ui/>
-                            <p>{this.state.dicesResult[0] }{this.state.dicesResult[1]}</p>
+                            <Dices />
+                            <p>{this.state.dicesResult[0] }||{this.state.dicesResult[1]}</p>
                             <button onClick={()=>{this.handleRollDices()}}> Roll Dices</button>
                             <button onClick={()=>{this.handleHoldTurn()}}> Hold Turn</button>
                         </div>
-                    <div>
+                    <div className=''>
                         <Player name={'Player2'}
                                 curentScore={this.state.player2.currentScore}
                                 totalScore ={this.state.player2.totalScore} />

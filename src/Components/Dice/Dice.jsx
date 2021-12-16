@@ -3,13 +3,13 @@ import './Dice.css'
 
 
 class Dices extends React.Component {
-    state = {dicesResult:[]}
+    state = {dicesResult:this.props.dicesResult}
 
     componentDidMount() {
-        this.setState(()=>{
-            dicesResult:this.props.dicesResult
-
-        })
+        // this.setState(()=>{
+        //     dicesResult:this.props.dicesResult
+        //
+        // })
     }
 
     render() {
