@@ -21,20 +21,39 @@ class DiceGame extends React.Component {
         }
 
     }
+
+    player1Object={
+        currentScore:0,
+        totalscore:0,
+    }
      rollDices= () => {
-            this.setState(
-                {dicesResult:[2,3]}
+            this.setState((prev)=>{
+               return {dicesResult:[2,3]}}
             )
-         console.log('result',this.state.dicesResult);
-         return [2,4];
 
-        }
+         let result= this.state.dicesResult[0]+this.state.dicesResult[1];
+         this.player1Object.currentScore = result;
+         return {
+             currentTurnResult:result,
+             player1:this.player1Object
+         }
+     }
+         // return [2,4];
+
+
     holdTurn = ()=>{
+        let result= this.state.dicesResult[0]+this.state.dicesResult[1];
+        this.player1Object.currentScore += result;
+        this.player1Object.totalscore+=result
         this.setState((prevState)=>{
-            return {currentTurnResult:this.state.dicesResult[0]+this.state.dicesResult[1]}
+            return {
+                currentTurnResult:result,
+                 player1:this.player1Object
+                }
             }
-        )
 
+        )
+        console.log(this.state.player1.currentScore)
     }
     updateScore= () =>{
 
@@ -47,7 +66,7 @@ class DiceGame extends React.Component {
 
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('this turn result',this.state.currentTurnResult)
+        console.log('this turn result',this.state.player1)
     }
 
     render(){
