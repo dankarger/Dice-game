@@ -1,8 +1,7 @@
 import React from "react";
 import Player from "../Components/Player/Player";
 import Ui from "../Components/Ui/Ui";
-import Dices from "../Components/Dice/Dice";
-import Button from "../Components/Common/Buttons/Button";
+
 
 import './DiceGame.css'
 
@@ -12,7 +11,7 @@ class DiceGame extends React.Component {
         message:null,
         currentTurnPlayer:'player1',
         targetScore:20,
-        dicesResult:[null,null],
+        dicesResult:[1,1],
         currentTurnResult:null,
         player1: {
             name:'Player1',

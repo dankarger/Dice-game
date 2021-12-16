@@ -11,15 +11,24 @@ class Dices extends React.Component {
         //
         // })
     }
-
+    diceImages = {
+        0:'/assets/images/dice-1.png',
+        1:"/assets/images/dice-1.png",
+        2:"/assets/images/dice-2.png",
+        3:"/assets/images/dice-3.png",
+        4:"/assets/images/dice-4.png",
+        5:"/assets/images/dice-5.png",
+        6:'/assets/images/dice-6.png',
+    }
 
     render() {
+        const{dicesResult}=this.props
         return(
-            <div>
-                <p>Diiiiiices</p>
-                <p>{this.props.dicesResult[0]}</p>
-                <p>{this.props.dicesResult[1]}</p>
-
+            <div className='Dices-div'>
+                <p>{dicesResult[0]}</p>
+                <img src={this.diceImages[dicesResult[0]]}  alt="dice1"/>
+                <img src={this.diceImages[dicesResult[1]]}  alt="dice2"/>
+                <p>{dicesResult[1]}</p>
             </div>
         )
     }
