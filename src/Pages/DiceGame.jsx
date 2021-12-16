@@ -7,34 +7,45 @@ class DiceGame extends React.Component {
     state = {
         currentTurnPlayer:'player1',
         targetScore:20,
-        // player1Score:0,
-        // player2Score:0,
         dicesResult:[null,null],
-        currentTurnResult:0,
+        currentTurnResult:null,
         player1:{
             currentScore:0,
             totalScore:0,
+            isTurn:true
         },
         player2:{
             currentScore:0,
             totalScore:0,
+            isTurn:false
         }
     }
 
     player1Object={
         currentScore:0,
         totalScore:0,
+        isTurn:true
     }
     player2Object={
         currentScore:0,
         totalScore:0,
+        isTurn:true
     }
 
+     getRandomNumber() {
+       return  Math.ceil(Math.random()*6)
+    }
      rollDices= () => {
+            let result =  [this.getRandomNumber(),this.getRandomNumber()]
             this.setState(()=>{
-               return {dicesResult:[2,3]}}
+               return {dicesResult:result}}
             )
-         this.updateScore(this.player1Object)
+         this.player1Object.currentScore=result
+         // this.setState(()=>{
+         //
+         // })
+         const resultSum = result[0]+result[1]
+         this.updateScore(this.player1Object,resultSum)
      }
          // return [2,4];
 
@@ -50,12 +61,9 @@ class DiceGame extends React.Component {
                  dicesResult:[0,0]
                 }
             }
-
         )
-
     }
-    updateScore = (player) =>{
-        let result= this.state.dicesResult[0]+this.state.dicesResult[1];
+    updateScore = (player,result) =>{
         player.currentScore = result;
         this.setState((prevState)=>{
             return {
@@ -90,8 +98,9 @@ class DiceGame extends React.Component {
                         />
                     </div>
                         <div>
-                           <Ui diceResult = {this.state.dicesResult}/>
-                            {this.state.dicesResult[0] }{this.state.dicesResult[1] }
+                           <Ui/>
+                            <p>{this.state.dicesResult[0] }{this.state.dicesResult[1]}</p>
+
                             <button onClick={()=>{this.rollDices()}}> Roll Dices</button>
                             <button onClick={()=>{this.holdTurn()}}> Hold Turn</button>
                         </div>
