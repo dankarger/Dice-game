@@ -154,3 +154,15 @@ class DiceGame extends React.Component {
 }
 
 export default DiceGame
+
+
+// TODO:add music and sounds
+// TODO:Responsive
+// TODO: readme.md
+// TODO: themes
+// TODO:winner state
+// TODO: opening page
+// TODO:favicon
+// TODO:meta tags
+// TODO:normalize
+// TODO:animations

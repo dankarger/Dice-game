@@ -3,14 +3,29 @@ import './Dice.css'
 
 
 class Dices extends React.Component {
-    state = {dicesResult:[0,0]}
+    state = {
+        dicesResult:[0,0],
+        animation:''
+    }
 
     componentDidMount() {
-        // this.setState(()=>{
-        //     dicesResult:this.props.dicesResult
-        //
-        // })
+        this.setState({animation:' '})
+
+        }
+
+
+
+    activatAnimation() {
+        this.setState({animation:' '})
+
     }
+
+
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+
+    }
+
     diceImages = {
         0:'/assets/images/dice-1.png',
         1:"/assets/images/dice-1.png",
@@ -23,10 +38,11 @@ class Dices extends React.Component {
 
     render() {
         const{dicesResult}=this.props
+        const{animation}=this.state
         return(
             <div className='Dices-div'>
                 <p>{dicesResult[0]}</p>
-                <img src={this.diceImages[dicesResult[0]]}  alt="dice1"/>
+                <img className={animation} src={this.diceImages[dicesResult[0]]}  alt="dice1"/>
                 <img src={this.diceImages[dicesResult[1]]}  alt="dice2"/>
                 <p>{dicesResult[1]}</p>
             </div>
