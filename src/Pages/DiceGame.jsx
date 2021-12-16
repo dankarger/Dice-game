@@ -4,9 +4,6 @@ import Ui from "../Components/Ui/Ui";
 import Dices from "../Components/Dice/Dice";
 import './DiceGame.css'
 
-
-
-
 class DiceGame extends React.Component {
     state = {
         currentTurnPlayer:'player1',
@@ -98,31 +95,33 @@ class DiceGame extends React.Component {
     }
 
     render(){
+        const{player1,player2,dicesResult} = this.state
+
         return(
             <div className='DiceGame-content '>
-                <h1>Current Player Turn:{this.getCurrentPlayer().name} </h1>
+                <h1>Current Player Turn: {this.getCurrentPlayer().name} </h1>
                 <div className="DiceGame-board-div flex">
-                    <div>
+                    {/*<div>*/}
                         <Player  name={'Player1'}
-                                 curentScore={this.state.player1.currentScore}
-                                 totalScore ={this.state.player1.totalScore}
-                                 isTurn ={this.state.player1.isTurn}
+                                 curentScore={player1.currentScore}
+                                 totalScore ={player1.totalScore}
+                                 isTurn ={player1.isTurn}
                         />
-                    </div>
-                        <div>
+                    {/*</div>*/}
+                        {/*<div>*/}
                            <Ui/>
-                            <Dices />
-                            <p>{this.state.dicesResult[0] }||{this.state.dicesResult[1]}</p>
+                            <Dices dicesResult = {dicesResult} />
+                            {/*<p>{this.state.dicesResult[0] }||{this.state.dicesResult[1]}</p>*/}
                             <button onClick={()=>{this.handleRollDices()}}> Roll Dices</button>
                             <button onClick={()=>{this.handleHoldTurn()}}> Hold Turn</button>
-                        </div>
-                    <div className=''>
+                        {/*</div>*/}
+                    {/*<div>*/}
                         <Player name={'Player2'}
-                                curentScore={this.state.player2.currentScore}
-                                totalScore ={this.state.player2.totalScore}
-                                isTurn ={this.state.player2.isTurn}
+                                curentScore={player2.currentScore}
+                                totalScore ={player2.totalScore}
+                                isTurn ={player2.isTurn}
                         />
-                    </div>
+                    {/*</div>*/}
                 </div>
             </div>
         )

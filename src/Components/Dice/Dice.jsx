@@ -3,7 +3,7 @@ import './Dice.css'
 
 
 class Dices extends React.Component {
-    state = {dicesResult:this.props.dicesResult}
+    state = {dicesResult:[0,0]}
 
     componentDidMount() {
         // this.setState(()=>{
@@ -11,12 +11,18 @@ class Dices extends React.Component {
         //
         // })
     }
+    // componentDidUpdate(prevProps, prevState, snapshot) {
+    //     this.setState(()=>{
+    //         dicesResult:this.props.dicesResult
+    //
+    //     })
+    // }
 
     render() {
         return(
             <div>
                 <p>Diiiiiices</p>
-                {this.state.dicesResult}
+                {this.props.dicesResult[0]}{this.props.dicesResult[1]}
 
             </div>
         )
