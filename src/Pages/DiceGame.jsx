@@ -47,8 +47,7 @@ class DiceGame extends React.Component {
         // this.setState((prev)=>(prev.player1.isTurn=!prev.player1.isTurn));
         this.player1Object.isTurn = !this.player1Object.isTurn;
         this.player2Object.isTurn = !this.player2Object.isTurn;
-        this.setState({player1:this.player1Object});
-        this.setState({player2:this.player2Object});
+        this.updatePlayersStates()
         return this.player1Object.isTurn? this.player1Object : this.player2Object;
     }
     getCurrentPlayer(){
@@ -57,6 +56,7 @@ class DiceGame extends React.Component {
 
     checkWin=()=>{
         const{targetScore,player1,player2}=this.state
+        console.log(targetScore,player1,player2)
         if(player1.totalScore>targetScore){
             return this.winGame(player1.name)
         }else if(player2.totalScore>targetScore){
@@ -101,7 +101,7 @@ class DiceGame extends React.Component {
                 }
             }
         )
-
+        this.checkWin()
         this.switchTurn()
     }
 
@@ -128,7 +128,7 @@ class DiceGame extends React.Component {
                         />
                     {/*</div>*/}
                         {/*<div>*/}
-                           <Ui/>
+                           <Ui dicesResult = {dicesResult}/>
                             <Dices dicesResult = {dicesResult} />
                             {/*<p>{this.state.dicesResult[0] }||{this.state.dicesResult[1]}</p>*/}
                             <button onClick={()=>{this.handleRollDices()}}> Roll Dices</button>
