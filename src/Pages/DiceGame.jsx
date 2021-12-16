@@ -11,7 +11,7 @@ class DiceGame extends React.Component {
         message:null,
         currentTurnPlayer:'player1',
         targetScore:20,
-        dicesResult:[1,1],
+        dicesResult:[0,0],
         currentTurnResult:null,
         player1: {
             name:'Player1',
@@ -33,7 +33,6 @@ class DiceGame extends React.Component {
         totalScore:0,
         isTurn:true
     }
-
     player2Object={
         name:'Player2',
         currentScore:0,
@@ -55,6 +54,15 @@ class DiceGame extends React.Component {
         return this.player1Object.isTurn?this.player1Object:this.player2Object
     }
 
+    doubleSix=()=>{
+        console.log('66');
+
+        const currentPlayer= this.getCurrentPlayer()
+        currentPlayer.currentScore=0;
+        this.updatePlayersStates()
+        this.switchTurn()
+
+    }
     checkWin=()=>{
         const{targetScore,player1,player2}=this.state
         // console.log(targetScore,player1,player2)
@@ -79,11 +87,16 @@ class DiceGame extends React.Component {
 
     handleRollDices= () => {
             let result =  [this.getRandomNumber(),this.getRandomNumber()];
+            this.setState(
+                {dicesResult:result}
+            )
+            console.log(this.state.dicesResult)
+            if(result===[6,6] || result[0]+result[1]===6) return this.doubleSix();
             const currentPlayer = this.getCurrentPlayer()
             currentPlayer.currentScore+= result[0]+result[1];;
-            this.setState(
-            {dicesResult:result}
-           )
+           //  this.setState(
+           //  {dicesResult:result}
+           // )
             this.updatePlayersStates()
          }
 
@@ -155,7 +168,8 @@ class DiceGame extends React.Component {
 
 export default DiceGame
 
-
+// TODO: add newGame function
+// TODO:make empty dice
 // TODO:add music and sounds
 // TODO:Responsive
 // TODO: readme.md
