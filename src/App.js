@@ -1,5 +1,5 @@
 import React from "react";
-import Test from "./components/Test";
+import DiceGame from "./Pages/DiceGame";
 
 if (module.hot) {
   module.hot.accept();
@@ -8,7 +8,7 @@ if (module.hot) {
 const App = ()=> {
   return (
       <>
-    <Test />
+        <DiceGame />
       </>
   )
 }
