@@ -14,10 +14,6 @@ class Ui extends React.Component {
             this.setState({dicesResult:this.props.dicesResult})
     }
 
-    // componentDidUpdate(prevProps, prevState, snapshot) {
-    //
-    //     this.setState({diceResult:this.props.diceResult})
-    // }
     render() {
         const{dicesResult, callbackRoll,callBackHold}=this.props
         return (

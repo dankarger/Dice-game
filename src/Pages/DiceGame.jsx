@@ -44,7 +44,6 @@ class DiceGame extends React.Component {
        return  Math.ceil(Math.random()*6)
     }
     switchTurn(){
-        // this.setState((prev)=>(prev.player1.isTurn=!prev.player1.isTurn));
         this.player1Object.isTurn = !this.player1Object.isTurn;
         this.player2Object.isTurn = !this.player2Object.isTurn;
         this.updatePlayersStates()
@@ -56,7 +55,6 @@ class DiceGame extends React.Component {
 
     doubleSix=()=>{
         console.log('66');
-
         const currentPlayer= this.getCurrentPlayer()
         currentPlayer.currentScore=0;
         this.updatePlayersStates()
@@ -65,7 +63,6 @@ class DiceGame extends React.Component {
     }
     checkWin=()=>{
         const{targetScore,player1,player2}=this.state
-        // console.log(targetScore,player1,player2)
         if(player1.totalScore>targetScore){
             return this.winGame(player1.name)
         }else if(player2.totalScore>targetScore){
@@ -94,16 +91,11 @@ class DiceGame extends React.Component {
             if(result===[6,6] || result[0]+result[1]===6) return this.doubleSix();
             const currentPlayer = this.getCurrentPlayer()
             currentPlayer.currentScore+= result[0]+result[1];;
-           //  this.setState(
-           //  {dicesResult:result}
-           // )
             this.updatePlayersStates()
          }
 
     handleHoldTurn = () => {
-        // let result= this.state.dicesResult[0]+this.state.dicesResult[1];
         const currentPlayer = this.getCurrentPlayer()
-
         currentPlayer.totalScore += currentPlayer.currentScore;
         currentPlayer.currentScore  = 0;
         this.setState((prevState)=>{
@@ -119,13 +111,6 @@ class DiceGame extends React.Component {
         this.switchTurn()
     }
 
-    componentDidMount() {
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-
-    }
-
     render(){
         const{player1,player2,dicesResult,gameOver,message} = this.state
 
@@ -134,32 +119,17 @@ class DiceGame extends React.Component {
                 <h1>Current Player Turn: {this.getCurrentPlayer().name} </h1>
                 {gameOver}{message}
                 <div className="DiceGame-board-div flex">
-                    {/*<div>*/}
                         <Player  name={'Player1'}
                                  curentScore={player1.currentScore}
                                  totalScore ={player1.totalScore}
-                                 isTurn ={player1.isTurn}
-                        />
-                    {/*</div>*/}
-                        {/*<div>*/}
+                                 isTurn ={player1.isTurn} />
                            <Ui dicesResult = {dicesResult}
                                 callbackRoll ={this.handleRollDices}
-                                callBackHold = {this.handleHoldTurn}
-                           />
-                            {/*<Dices dicesResult = {dicesResult} />*/}
-                            {/*<p>{this.state.dicesResult[0] }||{this.state.dicesResult[1]}</p>*/}
-                            {/*<button onClick={()=>{this.handleRollDices()}}> Roll Dices</button>*/}
-                            {/*<button onClick={()=>{this.handleHoldTurn()}}> Hold Turn</button>*/}
-                            {/*<Button name='Roll Dices2' callBack={this.handleRollDices}/>*/}
-                            {/*<Button name='Hold Turn' callBack={this.handleHoldTurn}/>*/}
-                        {/*</div>*/}
-                    {/*<div>*/}
+                                callBackHold = {this.handleHoldTurn} />
                         <Player name={'Player2'}
                                 curentScore={player2.currentScore}
                                 totalScore ={player2.totalScore}
-                                isTurn ={player2.isTurn}
-                        />
-                    {/*</div>*/}
+                                isTurn ={player2.isTurn} />
                 </div>
             </div>
         )

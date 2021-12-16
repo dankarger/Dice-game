@@ -5,7 +5,6 @@ class Player extends React.Component {
         state = {
             name:'',
             currentScore:0,
-            // totalScore:0,
           }
 
         playerName = this.props.name
@@ -15,7 +14,6 @@ class Player extends React.Component {
              name:this.playerName,
              CurrenrScore:0,
          })
-         // console.log('mount')
     }
 
     render(){
