@@ -2,6 +2,8 @@ import React from "react";
 import Player from "../Components/Player/Player";
 import Ui from "../Components/Ui/Ui";
 import Dices from "../Components/Dice/Dice";
+import Button from "../Components/Common/Buttons/Button";
+
 import './DiceGame.css'
 
 class DiceGame extends React.Component {
@@ -56,7 +58,7 @@ class DiceGame extends React.Component {
 
     checkWin=()=>{
         const{targetScore,player1,player2}=this.state
-        console.log(targetScore,player1,player2)
+        // console.log(targetScore,player1,player2)
         if(player1.totalScore>targetScore){
             return this.winGame(player1.name)
         }else if(player2.totalScore>targetScore){
@@ -128,11 +130,16 @@ class DiceGame extends React.Component {
                         />
                     {/*</div>*/}
                         {/*<div>*/}
-                           <Ui dicesResult = {dicesResult}/>
-                            <Dices dicesResult = {dicesResult} />
+                           <Ui dicesResult = {dicesResult}
+                                callbackRoll ={this.handleRollDices}
+                                callBackHold = {this.handleHoldTurn}
+                           />
+                            {/*<Dices dicesResult = {dicesResult} />*/}
                             {/*<p>{this.state.dicesResult[0] }||{this.state.dicesResult[1]}</p>*/}
-                            <button onClick={()=>{this.handleRollDices()}}> Roll Dices</button>
-                            <button onClick={()=>{this.handleHoldTurn()}}> Hold Turn</button>
+                            {/*<button onClick={()=>{this.handleRollDices()}}> Roll Dices</button>*/}
+                            {/*<button onClick={()=>{this.handleHoldTurn()}}> Hold Turn</button>*/}
+                            {/*<Button name='Roll Dices2' callBack={this.handleRollDices}/>*/}
+                            {/*<Button name='Hold Turn' callBack={this.handleHoldTurn}/>*/}
                         {/*</div>*/}
                     {/*<div>*/}
                         <Player name={'Player2'}

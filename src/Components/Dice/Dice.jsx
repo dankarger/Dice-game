@@ -11,12 +11,7 @@ class Dices extends React.Component {
         //
         // })
     }
-    // componentDidUpdate(prevProps, prevState, snapshot) {
-    //     this.setState(()=>{
-    //         dicesResult:this.props.dicesResult
-    //
-    //     })
-    // }
+
 
     render() {
         return(

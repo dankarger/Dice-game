@@ -1,5 +1,7 @@
 import React from "react";
 import Dices from "../Dice/Dice";
+import Button from "../Common/Buttons/Button";
+
 import './Ui.css'
 
 
@@ -17,15 +19,17 @@ class Ui extends React.Component {
     //     this.setState({diceResult:this.props.diceResult})
     // }
     render() {
-        const{dicesResult}=this.props
+        const{dicesResult, callbackRoll,callBackHold}=this.props
         return (
             <div className='Ui-div'>
               <h1>UI</h1>
+
                 <Dices dicesResult = {dicesResult}/>
-                {/*<p>{dicesResult}</p>*/}
-                {/*<p>{dicesResult[0]}</p>*/}
-                {/*<p>{dicesResult[1]}</p>*/}
-                {/*<button onClick={}> Roll Dice</button>*/}
+                <div>
+                    <Button name='Roll Dice'  callBack={callbackRoll}/>
+                    <Button name='Hold Turn'  callBack={callBackHold}/>
+                </div>
+
             </div>
         )
     }
