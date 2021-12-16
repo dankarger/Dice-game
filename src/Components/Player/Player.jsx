@@ -11,10 +11,10 @@ class Player extends React.Component {
         playerName = this.props.name
 
          componentDidMount() {
-         // this.setState( {
-         //     name:this.playerName,
-         //     CurrenrScore:0,
-         // })
+         this.setState( {
+             name:this.playerName,
+             CurrenrScore:0,
+         })
          // console.log('mount')
     }
 
