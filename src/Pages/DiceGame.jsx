@@ -4,6 +4,8 @@ import Ui from "../Components/Ui/Ui";
 import './DiceGame.css'
 
 class DiceGame extends React.Component {
+    state = { }
+
 
     render(){
         return(
@@ -12,9 +14,9 @@ class DiceGame extends React.Component {
                     <div>
                         <Player   name={'Player1'}/>
                     </div>
-                    <div className="Ui-div">
-                       <Ui />
-                    </div>
+                        <div>
+                           <Ui />
+                        </div>
                     <div>
                         <Player name={'Player2'}/>
                     </div>
