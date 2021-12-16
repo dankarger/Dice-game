@@ -6,6 +6,8 @@ import './DiceGame.css'
 
 class DiceGame extends React.Component {
     state = {
+        gameOver:false,
+        message:null,
         currentTurnPlayer:'player1',
         targetScore:20,
         dicesResult:[null,null],
@@ -53,6 +55,20 @@ class DiceGame extends React.Component {
         return this.player1Object.isTurn?this.player1Object:this.player2Object
     }
 
+    checkWin=()=>{
+        const{targetScore,player1,player2}=this.state
+        if(player1.totalScore>targetScore){
+            return this.winGame(player1.name)
+        }else if(player2.totalScore>targetScore){
+            return this.winGame(player2.name)
+        }
+    }
+    winGame(winner){
+        console.log('winner',winner)
+        this.setState({message:winner +" is the Winner",
+            gameOver:true}
+            )
+    }
     updatePlayersStates =()=>{
         this.setState({
             player1:this.player1Object,
@@ -63,7 +79,7 @@ class DiceGame extends React.Component {
     handleRollDices= () => {
             let result =  [this.getRandomNumber(),this.getRandomNumber()];
             const currentPlayer = this.getCurrentPlayer()
-            currentPlayer.currentScore= result[0]+result[1];;
+            currentPlayer.currentScore+= result[0]+result[1];;
             this.setState(
             {dicesResult:result}
            )
@@ -71,10 +87,11 @@ class DiceGame extends React.Component {
          }
 
     handleHoldTurn = () => {
-        let result= this.state.dicesResult[0]+this.state.dicesResult[1];
+        // let result= this.state.dicesResult[0]+this.state.dicesResult[1];
         const currentPlayer = this.getCurrentPlayer()
+
+        currentPlayer.totalScore += currentPlayer.currentScore;
         currentPlayer.currentScore  = 0;
-        currentPlayer.totalScore += result
         this.setState((prevState)=>{
             return {
                  currentTurnResult:prevState.result,
@@ -84,6 +101,7 @@ class DiceGame extends React.Component {
                 }
             }
         )
+
         this.switchTurn()
     }
 
@@ -95,11 +113,12 @@ class DiceGame extends React.Component {
     }
 
     render(){
-        const{player1,player2,dicesResult} = this.state
+        const{player1,player2,dicesResult,gameOver,message} = this.state
 
         return(
             <div className='DiceGame-content '>
                 <h1>Current Player Turn: {this.getCurrentPlayer().name} </h1>
+                {gameOver}{message}
                 <div className="DiceGame-board-div flex">
                     {/*<div>*/}
                         <Player  name={'Player1'}

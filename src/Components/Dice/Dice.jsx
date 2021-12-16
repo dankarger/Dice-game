@@ -22,7 +22,8 @@ class Dices extends React.Component {
         return(
             <div>
                 <p>Diiiiiices</p>
-                {this.props.dicesResult[0]}{this.props.dicesResult[1]}
+                <p>{this.props.dicesResult[0]}</p>
+                <p>{this.props.dicesResult[1]}</p>
 
             </div>
         )
