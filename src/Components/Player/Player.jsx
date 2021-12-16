@@ -5,17 +5,17 @@ class Player extends React.Component {
         state = {
             name:'',
             currentScore:0,
-            totalScore:0,
+            // totalScore:0,
           }
 
         playerName = this.props.name
 
          componentDidMount() {
-         this.setState( {
-             name:this.playerName,
-             CurrenrScore:0,
-         })
-         console.log('mount')
+         // this.setState( {
+         //     name:this.playerName,
+         //     CurrenrScore:0,
+         // })
+         // console.log('mount')
     }
 
     render(){
@@ -25,7 +25,7 @@ class Player extends React.Component {
                     <h1>{this.state.name}</h1>
 
                     <div className="Player-score-div">
-                        <h2>Current Score:{this.state.currentScore}</h2>
+                        {/*<h2>Current Score:{this.state.currentScore}</h2>*/}
                         <h3>Current Score from props:{this.props.curentScore}</h3>
                         <div className="Player-totale-score">
                             <h2>Total Score:{this.props.totalScore}</h2>

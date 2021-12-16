@@ -7,58 +7,66 @@ class DiceGame extends React.Component {
     state = {
         currentTurnPlayer:'player1',
         targetScore:20,
-        player1Score:0,
-        player2Score:0,
+        // player1Score:0,
+        // player2Score:0,
         dicesResult:[null,null],
         currentTurnResult:0,
         player1:{
             currentScore:0,
-            totalscore:0,
+            totalScore:0,
         },
         player2:{
             currentScore:0,
-            totalscore:0,
+            totalScore:0,
         }
-
     }
 
     player1Object={
         currentScore:0,
-        totalscore:0,
+        totalScore:0,
     }
+    player2Object={
+        currentScore:0,
+        totalScore:0,
+    }
+
      rollDices= () => {
-            this.setState((prev)=>{
+            this.setState(()=>{
                return {dicesResult:[2,3]}}
             )
-
-         let result= this.state.dicesResult[0]+this.state.dicesResult[1];
-         this.player1Object.currentScore = result;
-         return {
-             currentTurnResult:result,
-             player1:this.player1Object
-         }
+         this.updateScore(this.player1Object)
      }
          // return [2,4];
 
 
-    holdTurn = ()=>{
+    holdTurn = () => {
         let result= this.state.dicesResult[0]+this.state.dicesResult[1];
-        this.player1Object.currentScore += result;
-        this.player1Object.totalscore+=result
+        this.player1Object.currentScore  = 0;
+        this.player1Object.totalScore += result
         this.setState((prevState)=>{
             return {
-                currentTurnResult:result,
-                 player1:this.player1Object
+                currentTurnResult:prevState.result,
+                 player1:this.player1Object,
+                 dicesResult:[0,0]
                 }
             }
 
         )
-        console.log(this.state.player1.currentScore)
+
     }
-    updateScore= () =>{
+    updateScore = (player) =>{
+        let result= this.state.dicesResult[0]+this.state.dicesResult[1];
+        player.currentScore = result;
+        this.setState((prevState)=>{
+            return {
+                currentTurnResult:result,
+                player1:player
+            }
+        })
 
     }
     componentDidMount() {
+
         // this.setState(
         //     {dicesResult:this.rollDices()}
         // )
@@ -67,6 +75,8 @@ class DiceGame extends React.Component {
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log('this turn result',this.state.player1)
+        console.log('cuuur',this.state.player1.currentScore)
+        // this.updateScore(this.player1Object)
     }
 
     render(){
