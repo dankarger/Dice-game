@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
 
+
 }
 
 .DiceGame-header {
@@ -21,4 +22,5 @@
     color:white;
     text-shadow: black 1px 1px 1px ;
     box-shadow:  1px 1px 20px grey;
+    font-family: 'Roboto', sans-serif;
 }

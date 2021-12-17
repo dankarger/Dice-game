@@ -27,6 +27,7 @@ class DiceGame extends React.Component {
         }
     }
 
+    // Shallow copy of players state
     player1Object={
         name:'Player1',
         currentScore:0,
@@ -110,6 +111,32 @@ class DiceGame extends React.Component {
         this.checkWin()
         this.switchTurn()
     }
+    handleNewGame=()=>{
+        this.setState(
+            {
+            gameOver:false,
+            message:null,
+            currentTurnPlayer:'player1',
+            targetScore:20,
+            dicesResult:[0,0],
+            currentTurnResult:null,
+            player1: {
+            name:'Player1',
+                currentScore:0,
+                totalScore:0,
+                isTurn:true
+        },
+        player2: {
+            name:'Player2',
+                currentScore:0,
+                totalScore:0,
+                isTurn:false
+        }
+    }
+
+        )
+    }
+
 
     render(){
         const{player1,player2,dicesResult,gameOver,message} = this.state
@@ -126,7 +153,8 @@ class DiceGame extends React.Component {
                            <Ui playerTurn =  {this.getCurrentPlayer().name}
                                dicesResult = {dicesResult}
                                 callbackRoll ={this.handleRollDices}
-                                callBackHold = {this.handleHoldTurn} />
+                                callBackHold = {this.handleHoldTurn}
+                           callBackNewGame={this.handleNewGame}/>
                         <Player name={'Player2'}
                                 curentScore={player2.currentScore}
                                 totalScore ={player2.totalScore}

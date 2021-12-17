@@ -22,8 +22,8 @@ class Player extends React.Component {
                 <div className='Player-div '>
                     <h1 className={this.props.isTurn ? 'Player-isTurn' : undefined+' Player-name'}>{this.state.name}</h1>
                     <div className="Player-score-div">
-                        {/*<h2>Current Score:{this.state.currentScore}</h2>*/}
-                        <h3>Current Score from props:{this.props.curentScore}</h3>
+
+                        <h3>Current Score :{this.props.curentScore}</h3>
                         <div className="Player-totale-score">
                             <h2>Total Score:{this.props.totalScore}</h2>
                         </div>

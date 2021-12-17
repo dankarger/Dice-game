@@ -15,7 +15,7 @@ class Ui extends React.Component {
     }
 
     render() {
-        const{dicesResult, callbackRoll,callBackHold,playerTurn}=this.props
+        const{dicesResult, callbackRoll,callBackHold,playerTurn,callBackNewGame}=this.props
         return (
             <div className='Ui-div'>
               <h1 className='Ui-header'>Turn: {playerTurn}</h1>
@@ -24,6 +24,9 @@ class Ui extends React.Component {
                 <div>
                     <Button name='Roll Dice'  callBack={callbackRoll}/>
                     <Button name='Hold Turn'  callBack={callBackHold}/>
+                    <div>
+                        <Button name='New Game' callBack={callBackNewGame} />
+                    </div>
                 </div>
 
             </div>

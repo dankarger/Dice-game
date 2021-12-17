@@ -24,6 +24,14 @@ img {
     transform: skew(10deg);
     animation: fade-in 500ms forwards ease-in;
 }
+
+.Dices-img-div-show {
+  visibility: visible;
+}
+
+.Dices-img-div-hide {
+    visibility: hidden;
+}
 @keyframes fade-in {
     to{
         opacity: 1;

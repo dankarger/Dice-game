@@ -9,12 +9,16 @@
     border:2px solid transparent;
     text-shadow: black 1px 1px 1px ;
     box-shadow:  1px 1px 20px grey;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 .Player-isTurn {
     border:2px solid red;
     color:red;
     text-shadow: black 1px 1px 1px ;
     box-shadow:  1px 1px 20px grey;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .Player-score-div {
