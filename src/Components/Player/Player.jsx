@@ -19,13 +19,17 @@ class Player extends React.Component {
     render(){
         return(
             <>
-                <div className='Player-div '>
-                    <h1 className={this.props.isTurn ? 'Player-isTurn' : undefined+' Player-name'}>{this.state.name}</h1>
+                {/*<div className='Player-div '>*/}
+                    <div className={this.props.isTurn ? 'Player-isTurn Player-div' : ' Player-name Player-div'}>
+                    <h1 className={this.props.isTurn ? 'Player-isTurn ' : ' Player-name'}>{this.state.name}</h1>
+                    {/*<h1 className={this.props.isTurn ? 'Player-isTurn Player-div' : ' Player-name Player-div'}>{this.state.name}</h1>*/}
+
                     <div className="Player-score-div">
 
-                        <h3>Current Score :{this.props.curentScore}</h3>
+                        <h2>Current Score :</h2>
+                        <h1>{this.props.curentScore}</h1>
                         <div className="Player-total-score">
-                            <h2>Total Score:{this.props.totalScore}</h2>
+                            <h2>Total: {this.props.totalScore}</h2>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import './Dice.css'
 class Dices extends React.Component {
     state = {
         dicesResult:[0,0],
-        animation:'',
+        animation:false,
         isDicesImgDiv:false,
     }
 
@@ -34,22 +34,26 @@ class Dices extends React.Component {
         5:"/assets/images/dice-5.png",
         6:'/assets/images/dice-6.png',
     }
-
+    handleDiceAnimation = ()=>{
+        this.setState({
+            animation:true
+        })
+    }
     render() {
         let className = 'Dices-div';
-        if (this.state.isDicesImgDiv) {
+        if (this.state.animation) {
             className += ' Dices-animation';
         }
         const{dicesResult}=this.props
         const{animation,dicesImgDiv}=this.state
         return(
             <div className={className}>
-                <p>{dicesResult[0]}</p>
+                {/*<p>{dicesResult[0]}</p>*/}
                 <div className={className}>
-                    <img className={animation} src={this.diceImages[dicesResult[0]]}  alt='' />
+                    <img onChange={this.handleDiceAnimation} src={this.diceImages[dicesResult[0]]}  alt='' />
                     <img src={this.diceImages[dicesResult[1]]}  alt=" "/>
                 </div>
-                <p>{dicesResult[1]}</p>
+                {/*<p>{dicesResult[1]}</p>*/}
             </div>
         )
     }

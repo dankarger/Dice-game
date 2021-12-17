@@ -145,7 +145,7 @@ class DiceGame extends React.Component {
             <div className='DiceGame-content '>
                 <h1 className='DiceGame-header'>DICE GAME</h1>
                 {gameOver}{message}
-                <div className="DiceGame-board-div flex">
+                <div className="DiceGame-board-div">
                         <Player  name={'Player1'}
                                  curentScore={player1.currentScore}
                                  totalScore ={player1.totalScore}

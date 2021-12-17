@@ -3,18 +3,31 @@ button {
     color:whitesmoke;
     text-shadow: black 1px 1px 1px ;
     border-radius: 10px;
+    transition: 100ms ease-in-out;
+    box-shadow: 1px 1px  11px black;
+}
+button:hover {
+    cursor: pointer;
+    text-shadow: rgba(255, 233, 0, 0.24) 1px 1px 1px ;
+    /*text-shadow: black 1px 1px 1px ;*/
+
+    box-shadow: 1px 9px  11px black;
+
+    opacity: 0.8;
 }
 
 .Button-new-game {
     width:100%;
     background: rgba(7, 5, 5, 0.37);
     padding:1rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Nunito', sans-serif;
+
 }
 
 .Button-hold-turn, .Button-roll-dice {
 
     padding:1rem;
     background: rgba(31, 29, 29, 0.55);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Nunito', sans-serif;
+
 }

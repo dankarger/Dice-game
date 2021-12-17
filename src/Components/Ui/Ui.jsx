@@ -1,7 +1,7 @@
 import React from "react";
 import Dices from "../Dice/Dice";
 import Button from "../Common/Buttons/Button";
-import MusicPlayer from "../SoundPlayer/SoundPlayer";
+import MusicPlayer from "../MusicPlayer/MusicPlayer";
 
 import './Ui.css'
 
@@ -19,9 +19,10 @@ class Ui extends React.Component {
         const{dicesResult, callbackRoll,callBackHold,playerTurn,callBackNewGame}=this.props
         return (
             <div className='Ui-div'>
-              <h1 className='Ui-header'>Turn: {playerTurn}</h1>
+                <Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>
+
+                {/*<h1 className='Ui-header'>Turn: {playerTurn}</h1>*/}
                 {/*<div>*/}
-                    <Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>
                 {/*</div>*/}
                 <Dices dicesResult = {dicesResult}/>
                 <div className='Ui-buttons-div'>

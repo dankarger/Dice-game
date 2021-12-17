@@ -23,7 +23,7 @@ class MusicPlayer extends React.Component {
     render() {
         return (
             <>
-                <button onClick={this.playSound}>Play</button>
+                {/*<button onClick={this.playSound}>Play</button>*/}
                 <div  id="audio-div">
                     <audio id="music-player" controls>
                         <source className="track1" src={this.musicFile} type="audio/ogg" data-track-number="1">
