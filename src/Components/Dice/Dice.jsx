@@ -26,7 +26,7 @@ class Dices extends React.Component {
     }
 
     diceImages = {
-        0:'',
+        0:'/assets/images/blank.png',
         1:"/assets/images/dice-1.png",
         2:"/assets/images/dice-2.png",
         3:"/assets/images/dice-3.png",

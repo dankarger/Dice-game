@@ -7,11 +7,14 @@
     justify-content: space-around;
     align-items: center;
     padding:2rem;
+    border-radius: 20px;
 }
 
 .Ui-header {
     text-shadow: black 1px 1px 1px ;
     /*box-shadow:  1px 1px 20px grey;*/
+    color:whitesmoke;
+
 }
 
 .Ui-buttons-div {
@@ -19,4 +22,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color:whitesmoke;
 }

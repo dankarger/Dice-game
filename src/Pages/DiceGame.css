@@ -6,9 +6,10 @@
     padding:1rem;
     box-sizing: border-box;
     /*background:url('../assets/images/background1.png')no-repeat center center/cover;*/
-    background:url('../assets/images/background8.jpeg')no-repeat center center/cover;
+    background:url('../../public/assets/images/background8.jpeg')no-repeat center center/cover;
+    /*background:url('../../public/assets/images/dice-back.png')no-repeat center center/cover;*/
     background-color: cadetblue;
-
+/*/assets/images/dice-back.png*/
 }
 
 .DiceGame-board-div {
@@ -32,4 +33,5 @@
     font-weight: 800;
     font-size: calc(2rem * 5vw);
     letter-spacing: 4px;
+    display: none;
 }

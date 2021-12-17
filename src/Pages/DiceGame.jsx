@@ -94,7 +94,10 @@ class DiceGame extends React.Component {
             currentPlayer.currentScore+= result[0]+result[1];;
             this.updatePlayersStates()
          }
-
+    playSound(sound) {
+        let music = new Audio(this.soundTest);
+        music.play();
+    }
     handleHoldTurn = () => {
         const currentPlayer = this.getCurrentPlayer()
         currentPlayer.totalScore += currentPlayer.currentScore;
@@ -132,11 +135,8 @@ class DiceGame extends React.Component {
                 totalScore:0,
                 isTurn:false
         }
+    })
     }
-
-        )
-    }
-
 
     render(){
         const{player1,player2,dicesResult,gameOver,message} = this.state
@@ -151,14 +151,14 @@ class DiceGame extends React.Component {
                                  totalScore ={player1.totalScore}
                                  isTurn ={player1.isTurn} />
                            <Ui playerTurn =  {this.getCurrentPlayer().name}
-                               dicesResult = {dicesResult}
-                                callbackRoll ={this.handleRollDices}
-                                callBackHold = {this.handleHoldTurn}
-                           callBackNewGame={this.handleNewGame}/>
+                                 dicesResult = {dicesResult}
+                                 callbackRoll ={this.handleRollDices}
+                                 callBackHold = {this.handleHoldTurn}
+                                 callBackNewGame={this.handleNewGame}/>
                         <Player name={'Player2'}
-                                curentScore={player2.currentScore}
-                                totalScore ={player2.totalScore}
-                                isTurn ={player2.isTurn} />
+                                 curentScore={player2.currentScore}
+                                 totalScore ={player2.totalScore}
+                                 isTurn ={player2.isTurn} />
                 </div>
             </div>
         )
