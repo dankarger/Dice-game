@@ -5,6 +5,8 @@ img {
     margin-bottom:1rem;
     transition: 1s ease-in;
     /*opacity: 0;*/
+    text-shadow: black 1px 1px 1px ;
+    box-shadow:  1px 1px 20px grey;
 
 
 }

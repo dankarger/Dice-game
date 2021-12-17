@@ -15,10 +15,10 @@ class Ui extends React.Component {
     }
 
     render() {
-        const{dicesResult, callbackRoll,callBackHold}=this.props
+        const{dicesResult, callbackRoll,callBackHold,playerTurn}=this.props
         return (
             <div className='Ui-div'>
-              <h1>UI</h1>
+              <h1 className='Ui-header'>Turn: {playerTurn}</h1>
 
                 <Dices dicesResult = {dicesResult}/>
                 <div>

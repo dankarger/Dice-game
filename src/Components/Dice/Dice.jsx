@@ -39,8 +39,8 @@ class Dices extends React.Component {
         return(
             <div className='Dices-div'>
                 <p>{dicesResult[0]}</p>
-                <img className={animation} src={this.diceImages[dicesResult[0]]}  alt="dice1"/>
-                <img src={this.diceImages[dicesResult[1]]}  alt="dice2"/>
+                <img className={animation} src={this.diceImages[dicesResult[0]]}  alt=' '/>
+                <img src={this.diceImages[dicesResult[1]]}  alt=" "/>
                 <p>{dicesResult[1]}</p>
             </div>
         )

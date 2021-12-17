@@ -15,6 +15,10 @@
 
 }
 
-.dd {
-    background:red
+.DiceGame-header {
+    background: #9278a9;
+    text-align: center;
+    color:white;
+    text-shadow: black 1px 1px 1px ;
+    box-shadow:  1px 1px 20px grey;
 }

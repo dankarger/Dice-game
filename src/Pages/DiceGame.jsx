@@ -116,14 +116,15 @@ class DiceGame extends React.Component {
 
         return(
             <div className='DiceGame-content '>
-                <h1>Current Player Turn: {this.getCurrentPlayer().name} </h1>
+                <h1 className='DiceGame-header'>DICE GAME</h1>
                 {gameOver}{message}
                 <div className="DiceGame-board-div flex">
                         <Player  name={'Player1'}
                                  curentScore={player1.currentScore}
                                  totalScore ={player1.totalScore}
                                  isTurn ={player1.isTurn} />
-                           <Ui dicesResult = {dicesResult}
+                           <Ui playerTurn =  {this.getCurrentPlayer().name}
+                               dicesResult = {dicesResult}
                                 callbackRoll ={this.handleRollDices}
                                 callBackHold = {this.handleHoldTurn} />
                         <Player name={'Player2'}
