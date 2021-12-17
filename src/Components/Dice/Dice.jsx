@@ -6,7 +6,7 @@ class Dices extends React.Component {
     state = {
         dicesResult:[0,0],
         animation:'',
-        dicesImgDiv:false,
+        isDicesImgDiv:false,
     }
 
     componentDidMount() {
@@ -36,13 +36,17 @@ class Dices extends React.Component {
     }
 
     render() {
+        let className = 'Dices-div';
+        if (this.state.isDicesImgDiv) {
+            className += ' Dices-animation';
+        }
         const{dicesResult}=this.props
         const{animation,dicesImgDiv}=this.state
         return(
-            <div className='Dices-div'>
+            <div className={className}>
                 <p>{dicesResult[0]}</p>
-                <div className={dicesImgDiv ? 'Dices-img-div-show' : 'Dices-img-div-hide'}>
-                    <img className={animation} src={this.diceImages[dicesResult[0]]}  alt=' '/>
+                <div className={className}>
+                    <img className={animation} src={this.diceImages[dicesResult[0]]}  alt='' />
                     <img src={this.diceImages[dicesResult[1]]}  alt=" "/>
                 </div>
                 <p>{dicesResult[1]}</p>

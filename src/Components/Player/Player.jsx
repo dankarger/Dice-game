@@ -24,7 +24,7 @@ class Player extends React.Component {
                     <div className="Player-score-div">
 
                         <h3>Current Score :{this.props.curentScore}</h3>
-                        <div className="Player-totale-score">
+                        <div className="Player-total-score">
                             <h2>Total Score:{this.props.totalScore}</h2>
                         </div>
                     </div>

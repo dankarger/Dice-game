@@ -1,14 +1,22 @@
 .Ui-div {
     width:100%;
     height:100%;
-    background:cadetblue;
+    background: rgba(95, 158, 160, 0.31);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding:2rem;
 }
 
 .Ui-header {
     text-shadow: black 1px 1px 1px ;
     /*box-shadow:  1px 1px 20px grey;*/
+}
+
+.Ui-buttons-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

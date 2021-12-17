@@ -3,12 +3,11 @@ import './Button.css'
 
 class Button extends React.Component {
 
-
     render() {
-        const{name,callBack}=this.props
+        const{name,callBack,classNameProp}=this.props
         return(
             <>
-            <button onClick={()=>callBack()}> {name} </button>
+            <button onClick={()=>callBack()} className={classNameProp}> {name} </button>
             </>
         )
     }

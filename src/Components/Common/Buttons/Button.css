@@ -1,0 +1,22 @@
+button {
+
+    font-size: calc(1rem  + 1vw );
+
+}
+
+
+.Button-new-game {
+
+    width:100%;
+    background: darkkhaki;
+    padding:1rem;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.Button-hold-turn, .Button-roll-dice {
+
+    padding:1rem;
+    background: darkkhaki;
+    font-family: 'Raleway', sans-serif;
+}

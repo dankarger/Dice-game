@@ -1,6 +1,7 @@
 import React from "react";
 import Dices from "../Dice/Dice";
 import Button from "../Common/Buttons/Button";
+import MusicPlayer from "../SoundPlayer/SoundPlayer";
 
 import './Ui.css'
 
@@ -19,16 +20,15 @@ class Ui extends React.Component {
         return (
             <div className='Ui-div'>
               <h1 className='Ui-header'>Turn: {playerTurn}</h1>
-
+                {/*<div>*/}
+                    <Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>
+                {/*</div>*/}
                 <Dices dicesResult = {dicesResult}/>
-                <div>
-                    <Button name='Roll Dice'  callBack={callbackRoll}/>
-                    <Button name='Hold Turn'  callBack={callBackHold}/>
-                    <div>
-                        <Button name='New Game' callBack={callBackNewGame} />
-                    </div>
+                <div className='Ui-buttons-div'>
+                    <Button name='Roll Dice'  callBack={callbackRoll} classNameProp='Button-roll-dice '/>
+                    <Button name='Hold Turn'  callBack={callBackHold} classNameProp='Button-hold-turn '/>
                 </div>
-
+            <MusicPlayer />
             </div>
         )
     }

@@ -3,6 +3,7 @@
     height:100%;
     border:1px solid black;
     padding:3rem;
+    font-family: 'Raleway', sans-serif;
 
 }
 .Player-name {
@@ -10,7 +11,8 @@
     text-shadow: black 1px 1px 1px ;
     box-shadow:  1px 1px 20px grey;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
+
 }
 .Player-isTurn {
     border:2px solid red;
@@ -18,7 +20,8 @@
     text-shadow: black 1px 1px 1px ;
     box-shadow:  1px 1px 20px grey;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
+
 }
 
 .Player-score-div {
@@ -28,4 +31,10 @@
     padding:1rem;
     text-shadow: black 1px 1px 1px ;
     box-shadow:  1px 1px 20px grey;
+    font-family: 'Raleway', sans-serif;
+}
+
+.Player-total-score {
+    font-family: 'Raleway', sans-serif;
+
 }
