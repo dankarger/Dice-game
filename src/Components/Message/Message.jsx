@@ -10,8 +10,9 @@ class Message extends React.Component {
         return(
             <>
                 <div className="Message-div">
-                    <h1>{this.props.message}</h1>
-
+                    <div className='Message'>
+                       <h1>{this.props.message}</h1>
+                    </div>
                 </div>
             </>
         )

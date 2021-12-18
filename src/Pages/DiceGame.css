@@ -3,6 +3,7 @@
     /*height:100vh;*/
     width:100vw;
     height:100vh;
+
     /*padding:1rem;*/
     box-sizing: border-box;
     /*background:url('../assets/images/background1.png')no-repeat center center/cover;*/
@@ -33,6 +34,7 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
+    /*min-width:500px;*/
     z-index: 1;
     top:0;
     left:0;
@@ -53,10 +55,10 @@
 
 }
 .DiceGame-board-div {
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100vh;
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     /*align-items: center;*/
     font-family: 'Nunito', sans-serif;
     position: relative;

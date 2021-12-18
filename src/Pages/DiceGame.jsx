@@ -58,7 +58,7 @@ class DiceGame extends React.Component {
         this.player2Object.isTurn = !this.player2Object.isTurn;
         this.updatePlayersStates()
         this.playSound(this.soundsList.buttonSound)
-        this.playSound(this.soundsList.switchPlayersSound)
+        // this.playSound(this.soundsList.switchPlayersSound)
 
         return this.player1Object.isTurn? this.player1Object : this.player2Object;
     }
@@ -127,6 +127,7 @@ class DiceGame extends React.Component {
                 }
             }
         )
+        this.playSound(this.soundsList.switchPlayersSound)
         if(this.checkWin()) return
         this.switchTurn()
     }
@@ -187,7 +188,7 @@ class DiceGame extends React.Component {
         const{player1,player2,dicesResult,gameOver,message,isGameOver} = this.state
 
         return(
-            <div className={this.state.player1.isTurn?'DiceGame-content ' :'DiceGame-content ' }>
+            <div className='DiceGame-content '>
                 <div className={this.state.player1.isTurn?"DiceGame-background-img-div ":"DiceGame-background-img-div flip" }>
                     <div className={this.state.player1.isTurn?" ":" flip" }>
 

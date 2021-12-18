@@ -96,5 +96,8 @@
    .Player-div {
      min-width:200px;
     }
+    .Player-name h1, .Player-isTurn  h1{
+        font-size: calc(2rem + 2vw);
+    }
 
 }

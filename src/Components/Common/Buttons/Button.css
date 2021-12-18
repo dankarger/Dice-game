@@ -24,7 +24,9 @@ button:active {
     padding:1rem;
     font-family: 'Nunito', sans-serif;
     position: relative;
-    z-index: 1500;
+    z-index: 1600;
+    white-space: nowrap;
+
 
 }
 
@@ -42,5 +44,7 @@ button:active {
     button {
         font-size: calc(1rem );
     }
-
+    .Button-hold-turn, .Button-roll-dice{
+        background: rgba(0, 0, 0, 0.62);
+    }
 }
