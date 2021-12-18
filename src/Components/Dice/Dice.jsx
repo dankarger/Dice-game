@@ -45,7 +45,7 @@ class Dices extends React.Component {
             className += ' Dices-animation';
         }
         const{dicesResult}=this.props
-        const{animation,dicesImgDiv}=this.state
+        // const{animation,dicesImgDiv}=this.state
         return(
             <div className={className}>
                 {/*<p>{dicesResult[0]}</p>*/}
