@@ -72,6 +72,7 @@
 .Player-total-score h3,
 .Player-total-score h2{
     font-family: 'Nunito', sans-serif;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
 
 }
 .Player-total-score {

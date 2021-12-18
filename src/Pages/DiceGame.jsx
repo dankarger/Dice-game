@@ -41,6 +41,12 @@ class DiceGame extends React.Component {
         isTurn:false
     }
 
+    soundsList = {
+        buttonSound:'/assets/sounds/switch.wav',
+        switchPlayersSound:'/assets/sounds/melodic3_affirm.wav',
+
+    }
+
      getRandomNumber() {
        return  Math.ceil(Math.random()*6)
     }
@@ -48,6 +54,9 @@ class DiceGame extends React.Component {
         this.player1Object.isTurn = !this.player1Object.isTurn;
         this.player2Object.isTurn = !this.player2Object.isTurn;
         this.updatePlayersStates()
+        this.playSound(this.soundsList.buttonSound)
+        this.playSound(this.soundsList.switchPlayersSound)
+
         return this.player1Object.isTurn? this.player1Object : this.player2Object;
     }
     getCurrentPlayer(){
@@ -93,9 +102,10 @@ class DiceGame extends React.Component {
             const currentPlayer = this.getCurrentPlayer()
             currentPlayer.currentScore+= result[0]+result[1];;
             this.updatePlayersStates()
+            this.playSound(this.soundsList.buttonSound)
          }
     playSound(sound) {
-        let music = new Audio(this.soundTest);
+        let music = new Audio(sound);
         music.play();
     }
     handleHoldTurn = () => {
@@ -115,6 +125,7 @@ class DiceGame extends React.Component {
         this.switchTurn()
     }
     handleNewGame=()=>{
+        this.playSound(this.soundsList.buttonSound)
         this.setState(
             {
             gameOver:false,

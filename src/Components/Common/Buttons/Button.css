@@ -4,16 +4,18 @@ button {
     text-shadow: black 1px 1px 1px ;
     border-radius: 10px;
     transition: 100ms ease-in-out;
-    box-shadow: 1px 1px  11px black;
+    box-shadow: 1px 7px  11px black;
 }
 button:hover {
     cursor: pointer;
     text-shadow: rgba(255, 233, 0, 0.24) 1px 1px 1px ;
     /*text-shadow: black 1px 1px 1px ;*/
+    box-shadow: 1px 3px  11px black;
+    opacity: 0.9;
+}
 
-    box-shadow: 1px 9px  11px black;
-
-    opacity: 0.8;
+button:active {
+    color: #dacbcb;
 }
 
 .Button-new-game {
