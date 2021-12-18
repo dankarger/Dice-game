@@ -21,7 +21,7 @@ class OpeningPage extends React.Component {
   }
 
     render(){
-        const {callBackNewGame,targetScoreCallBack, chooseThemeCallBack,isGameStart}=this.props
+        const {targetScoreCallBack, chooseThemeCallBack,}=this.props
         return (
             <div className={ this.state.isOpeningPage? 'Opening-page-content  ':' Opening-page-content hide'}>
             <div className=" ">
