@@ -35,7 +35,7 @@ class OpeningPage extends React.Component {
     }
 
     render() {
-        const {targetScoreCallBack, chooseThemeCallBack, isOpeningPageProp,} = this.props
+        const {targetScoreCallBack, isOpeningPageProp,} = this.props
         return (
             <div className={isOpeningPageProp ? 'Opening-page-content show' : ' Opening-page-content hide '}>
                 <div>
