@@ -22,14 +22,10 @@ class Ui extends React.Component {
         return (
             <>
             <div className='Ui-div'>
-
                 <Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>
                 <div className="Ui-target-score-div">
                     <h4>Target: {targetScoreProp}</h4>
                 </div>
-                {/*<h1 className='Ui-header'>Turn: {playerTurn}</h1>*/}
-                {/*<div>*/}
-                {/*</div>*/}
                 <Dices dicesResult = {dicesResult}/>
                 <div className='Ui-buttons-div'>
                     <Button name='Roll Dice'  callBack={callbackRoll} classNameProp='Button-roll-dice ' disabledProp={isGameOver}/>

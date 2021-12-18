@@ -5,34 +5,25 @@ img {
     display: block;
     margin:1rem;
     transition: 1s ease-in;
-    /*border:6px black solid;*/
     text-shadow: black 1px 1px 1px ;
-
 }
-
 
 .Dices-div {
     display: flex;
     justify-content: center;
-    /*flex-direction: column;*/
     align-items: center;
     width: 100%;
     height: 100%;
-    /*visibility: hidden;*/
     overflow: hidden;
-
 }
 
 
 .Dice-animation {
-    /*transform: skew(10deg);*/
     animation: fade-in 500ms forwards ease-in;
-    /*transform: translateX(-100px);*/
 }
 
 .Dices-img-div-show {
   visibility: visible;
-
 }
 
 .Dices-img-div-hide {
@@ -50,5 +41,4 @@ img {
 .Dices-div {
     flex-direction: column;
 }
-
 }

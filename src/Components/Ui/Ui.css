@@ -10,12 +10,15 @@
     border-radius: 20px;
     background: rgba(95, 158, 160, 0.14);
 }
+
 .Ui-div:hover {
     opacity: 0.9;
 }
+
 .Ui-target-score-div {
     margin-top:1rem;
 }
+
 .Ui-target-score-div h4{
     font-family: 'Nunito', sans-serif;
     font-size: calc(1rem + 2vw );
@@ -26,9 +29,7 @@
 
 .Ui-header {
     text-shadow: black 1px 1px 1px ;
-    /*box-shadow:  1px 1px 20px grey;*/
     color:whitesmoke;
-
 }
 
 .Ui-buttons-div {
@@ -38,8 +39,6 @@
     align-items: center;
     color:whitesmoke;
     margin-bottom:4.5rem;
-    /*background: rgba(95, 158, 160, 0.14);*/
-
 }
 
 

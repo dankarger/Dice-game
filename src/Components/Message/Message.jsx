@@ -5,7 +5,6 @@ import './Message.css'
 class Message extends React.Component {
 
 
-
     render() {
         return(
             <>

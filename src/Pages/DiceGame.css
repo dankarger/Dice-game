@@ -78,11 +78,9 @@
     height:100vh;
     display:flex;
     justify-content: center;
-    /*align-items: center;*/
     font-family: 'Nunito', sans-serif;
     position: relative;
     z-index: 50;
-
 
 }
 .flip {
@@ -102,7 +100,6 @@
     display: none;
 }
 .DiceGame-winning-message {
-    /*display: none;*/
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -121,7 +118,6 @@
 }
 .DiceGame-winning-message h1 {
     font-weight: 900;
-    /*font-size: calc(10rem * 35vw);*/
     letter-spacing: 5px;
 }
 .fade-in {
@@ -129,7 +125,6 @@
 }
 
 /*animations*/
-
 
 @keyframes fade-in {
     to {

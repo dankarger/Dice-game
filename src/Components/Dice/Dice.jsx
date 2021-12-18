@@ -1,7 +1,6 @@
 import React from "react";
 import './Dice.css'
 
-
 class Dices extends React.Component {
     state = {
         dicesResult:[0,0],
@@ -13,17 +12,6 @@ class Dices extends React.Component {
         this.setState({dicesImgDiv:false})
         }
 
-    activatAnimation() {
-        this.setState({animation:' '})
-
-    }
-
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        // if(this.props.dicesResult!==[0,0]){
-        //     this.setState({dicesImgDiv:true})
-        // }
-    }
 
     diceImages = {
         0:'/assets/images/blank.png',
@@ -45,15 +33,12 @@ class Dices extends React.Component {
             className += ' Dices-animation';
         }
         const{dicesResult}=this.props
-        // const{animation,dicesImgDiv}=this.state
         return(
             <div className={className}>
-                {/*<p>{dicesResult[0]}</p>*/}
                 <div className={className}>
                     <img onChange={this.handleDiceAnimation} src={this.diceImages[dicesResult[0]]}  alt='' />
                     <img src={this.diceImages[dicesResult[1]]}  alt=" "/>
                 </div>
-                {/*<p>{dicesResult[1]}</p>*/}
             </div>
         )
     }
