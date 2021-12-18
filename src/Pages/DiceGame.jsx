@@ -172,19 +172,15 @@ class DiceGame extends React.Component {
             targetScore:20,
             dicesResult:[0,0],
             currentTurnResult:null,
-            player1: {
-            name:'Player1',
-                currentScore:0,
-                totalScore:0,
-                isTurn:true
-        },
-        player2: {
-            name:'Player2',
-                currentScore:0,
-                totalScore:0,
-                isTurn:false
-        }
+
     })
+        this.player1Object.currentScore=0;
+        this.player1Object.totalScore=0;
+        this.player1Object.isTurn=true;
+        this.player2Object.currentScore=0;
+        this.player2Object.totalScore=0;
+        this.player2Object.isTurn=false;
+        this.updatePlayersStates()
     }
 
     render(){
@@ -228,10 +224,9 @@ export default DiceGame
 // TODO:Responsive
 // TODO: readme.md
 // TODO: themes
-// TODO:winner state
 // TODO: opening page
-// TODO:favicon
 // TODO:meta tags
 // TODO:normalize
 // TODO:animations
 // TODO:Local storage
+// TODO:clean assets and code
