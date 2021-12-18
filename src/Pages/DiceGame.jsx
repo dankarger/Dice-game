@@ -8,7 +8,7 @@ import './DiceGame.css'
 class DiceGame extends React.Component {
     state = {
         isMessageDouble6:false,
-        gameOver:false,
+        isGameOver:false,
         messageText:null,
         currentTurnPlayer:'player1',
         targetScore:20,
@@ -45,7 +45,8 @@ class DiceGame extends React.Component {
     soundsList = {
         buttonSound:'/assets/sounds/switch.wav',
         switchPlayersSound:'/assets/sounds/message3.wav',
-        message:'/assets/sounds/melodic3_affirm.wav'
+        message:'/assets/sounds/melodic3_affirm.wav',
+        win:'/assets/sounds/win.wav'
 
     }
 
@@ -88,8 +89,8 @@ class DiceGame extends React.Component {
     }
     winGame(winner){
         console.log('winner',winner)
-        this.setState({message:winner +" is the Winner",
-            gameOver:true}
+        this.setState({messageText:winner +" is the Winner",
+                isGameOver:true}
             )
 
     }
@@ -149,6 +150,18 @@ class DiceGame extends React.Component {
                     <Message message={this.state.messageText}/>
                 </>
             )
+        }
+        if(this.state.isGameOver) {
+            this.playSound(this.soundsList.win)
+
+            return (
+                <>
+                    {/*<Message message='✦ Double 6 ✦'/>*/}
+                    <Message message={this.state.messageText}/>
+                </>
+            )
+
+
         }
     }
 

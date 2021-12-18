@@ -1,12 +1,12 @@
  .music-player {
-    opacity: 0.5;
-    filter: brightness(100%);
+    opacity: 0.2;
+    filter: brightness(80%);
     transition: 200ms ease-in-out;
      color:white;
      background: transparent;
 }
 
   .music-player:hover {
-    filter: brightness(80%);
+    filter: brightness(100%);
     opacity: 0.9;
 }
