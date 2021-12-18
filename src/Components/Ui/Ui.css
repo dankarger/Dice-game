@@ -9,13 +9,17 @@
     padding-bottom:1rem;
     border-radius: 20px;
     background: rgba(95, 158, 160, 0.14);
-
 }
-
-
 .Ui-div:hover {
     opacity: 0.9;
 }
+.Ui-target-score-div h4{
+    font-family: 'Nunito', sans-serif;
+    font-size: calc(1rem + 2vw );
+    color: rgba(107, 189, 164, 0.26);
+    text-shadow: rgba(245, 245, 245, 0.21) 1px 1px 1px ;
+}
+
 .Ui-header {
     text-shadow: black 1px 1px 1px ;
     /*box-shadow:  1px 1px 20px grey;*/

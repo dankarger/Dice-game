@@ -16,10 +16,15 @@ class Ui extends React.Component {
     }
 
     render() {
-        const{dicesResult, callbackRoll,callBackHold,callBackNewGame,isGameOver}=this.props
+        const {dicesResult, callbackRoll,
+            callBackHold,callBackNewGame,
+            isGameOver,isGameStart,targetScoreProp } = this.props
         return (
             <>
             <div className='Ui-div'>
+                <div className="Ui-target-score-div">
+                    <h4>Target: {targetScoreProp}</h4>
+                </div>
                 <Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>
 
                 {/*<h1 className='Ui-header'>Turn: {playerTurn}</h1>*/}
@@ -30,7 +35,7 @@ class Ui extends React.Component {
                     <Button name='Roll Dice'  callBack={callbackRoll} classNameProp='Button-roll-dice ' disabledProp={isGameOver}/>
                     <Button name='Hold Turn'  callBack={callBackHold} classNameProp='Button-hold-turn ' disabledProp={isGameOver}/>
                 </div>
-            <MusicPlayer />
+            <MusicPlayer isGameStart={isGameStart}/>
             </div>
             </>
         )
