@@ -71,12 +71,6 @@ class DiceGame extends React.Component {
         currentPlayer.currentScore=0;
         this.updatePlayersStates()
         this.switchTurn()
-        // this.setState({isMessage:true})
-        // setTimeout(()=>{
-        //     this.setState(
-        //         {isMessage:false}
-        //     )
-        // },700)
         this.showMessage(700)
     }
     checkWin=()=>{
@@ -86,6 +80,7 @@ class DiceGame extends React.Component {
         }else if(player2.totalScore>targetScore){
             return this.winGame(player2.name)
         }
+        return false
     }
     winGame(winner){
         console.log('winner',winner)
@@ -94,7 +89,7 @@ class DiceGame extends React.Component {
                 dicesResult:[0,0],
             }
             )
-
+        return true
     }
     updatePlayersStates =()=>{
         this.setState({
@@ -120,6 +115,7 @@ class DiceGame extends React.Component {
     }
     handleHoldTurn = () => {
         const currentPlayer = this.getCurrentPlayer()
+
         currentPlayer.totalScore += currentPlayer.currentScore;
         currentPlayer.currentScore  = 0;
         this.setState((prevState)=>{
@@ -131,7 +127,7 @@ class DiceGame extends React.Component {
                 }
             }
         )
-        this.checkWin()
+        if(this.checkWin()) return
         this.switchTurn()
     }
     showMessage =(time) => {

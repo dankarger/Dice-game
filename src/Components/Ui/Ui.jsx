@@ -27,7 +27,7 @@ class Ui extends React.Component {
                 <Dices dicesResult = {dicesResult}/>
                 <div className='Ui-buttons-div'>
                     <Button name='Roll Dice'  callBack={callbackRoll} classNameProp='Button-roll-dice ' disabledProp={isGameOver}/>
-                    <Button name='Hold Turn'  callBack={callBackHold} classNameProp='Button-hold-turn '/>
+                    <Button name='Hold Turn'  callBack={callBackHold} classNameProp='Button-hold-turn ' disabledProp={isGameOver}/>
                 </div>
             <MusicPlayer />
             </div>
