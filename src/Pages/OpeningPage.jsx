@@ -4,27 +4,26 @@ import Button from "../Components/Common/Buttons/Button";
 
 
 class OpeningPage extends React.Component {
-    state={isGameOn:false,isOpeningPage: this.props.isOpeneningGameProp,isGameStart: this.props.isGameStart}
+    state={isGameOn:false,isOpeningPage:this.props.isOpeneningPage,isGameStart: this.props.isGameStart}
 
+    showOpeningPage=()=>{
+        this.setState({isOpeningPage:true})
 
+    }
     startGame =()=> {
       this.setState({
           isGameOn:true,
           isOpeningPage:false,
           isGameStart:true
-      },()=>console.log('opememg:',this.state.isOpeningPage))
+      })
 
 }
-  componentDidUpdate(prevProps, prevState, snapshot) {
-        // this.setState({isOpeningPage:this.props.isGameStart})
-      // console.log('opememgdsasdasd:',this.props.isOpeneningGameProp)
-  }
 
     render(){
-        const {targetScoreCallBack, chooseThemeCallBack,}=this.props
+        const {targetScoreCallBack, chooseThemeCallBack,isOpeningPageProp,}=this.props
         return (
-            <div className={ this.state.isOpeningPage? 'Opening-page-content  ':' Opening-page-content hide'}>
-            <div className=" ">
+            <div className={isOpeningPageProp? 'Opening-page-content show':' Opening-page-content hide '}>
+            <div >
                 <h1   >DICE GAME </h1>
                 <div className="Opening-themes-div">
                     <h2>Choose Themes</h2>
@@ -33,15 +32,11 @@ class OpeningPage extends React.Component {
                         <input type="radio" id="themes" name="drone" value="huey"
                                onClick={()=>chooseThemeCallBack('blue')}
                         />
-
                         <label htmlFor="themes">Blue</label>
-
                     </div>
-
                     <div>
                         <input type="radio" id="themes" name="drone" value="turquize"
                                onClick={()=>chooseThemeCallBack('turquize')}
-
                         />
                         <label htmlFor="themes"
                                >Turquize</label>

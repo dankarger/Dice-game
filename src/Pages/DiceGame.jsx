@@ -167,21 +167,22 @@ class DiceGame extends React.Component {
 
 
     handleNewGame=()=>{
-        this.playSound(this.soundsList.buttonSound)
-        this.setState({isGameStart:true});
+
+        // this.setState({isGameStart:true});
         this.setState(
             {
+                isGameStart:true,
                 isOpeningPage: true,
                 isGameOn:false,
             isMessageDouble6:false,
             isGameOver:false,
             messageText:null,
             currentTurnPlayer:'player1',
-            targetScore:20,
+            targetScore:null,
             dicesResult:[0,0],
             currentTurnResult:null,
 
-    },()=>console.log('isO',this.state.isOpeningPage))
+    },()=> this.playSound(this.soundsList.buttonSound))
         this.player1Object.currentScore=0;
         this.player1Object.totalScore=0;
         this.player1Object.isTurn=true;
@@ -193,9 +194,15 @@ class DiceGame extends React.Component {
     handleTargetScore =(target)=>{
         this.playSound(this.soundsList.buttonSound)
         this.setState({
-            targetScore:target
+            targetScore:target,
+            isGameStart:true,
+            isOpeningPage:false,
         })
     }
+    showOpeningPage(){
+        return this.state.isOpeningPage
+    }
+
     handleChooseTheme =(color) => {
            console.log(color)
         this.setState({isOpeningPage:false})
@@ -210,9 +217,9 @@ class DiceGame extends React.Component {
             <OpeningPage callBackNewGame={this.handleNewGame}
                          targetScoreCallBack={this.handleTargetScore}
                          chooseThemeCallBack={this.handleChooseTheme}
-                         isOpeneningGameProp={isOpeningPage}
+                         isOpeningPageProp={isOpeningPage}
                          isGameStart={isGameStart}
-
+                         showOpeningPage={this.showOpeningPage()}
 
             />
             <div className='DiceGame-content '>
