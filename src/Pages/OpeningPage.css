@@ -14,7 +14,7 @@
     transform: translateX(-300px);
     transition: 3s ease-in-out;
     /*opacity: 0;*/
-    animation: fade-in 2s forwards  ease-in-out;
+    animation: fade-in 1s forwards  ease-in-out;
     padding:1rem;
 }
 .Opening-page-content h1 {

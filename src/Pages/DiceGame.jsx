@@ -204,8 +204,7 @@ class DiceGame extends React.Component {
     }
 
     handleChooseTheme =(color) => {
-           console.log(color)
-        this.setState({isOpeningPage:false})
+        return color
     }
     render(){
         const{player1,player2,dicesResult
