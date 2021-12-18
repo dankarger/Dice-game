@@ -29,10 +29,11 @@ class MusicPlayer extends React.Component {
         return (
             <>
                 {/*<button onClick={this.playSound}>Play</button>*/}
-                <div  className="audio-div" >
-                    <audio className="music-player" controls>
+                <div  className="MusicPlayer-audio-div" >
+                    <audio className="music-player" controls loop>
                         {/*<source className="track1" src={this.musicFilesList[1]} type="audio/ogg" data-track-number="1" />*/}
                         <source className="track1" src={this.musicFilesList[3]} type="audio/ogg" data-track-number="1" />
+                        {/*<source className="track2" src={this.musicFilesList[1]} type="audio/ogg" data-track-number="1" />*/}
 
                         {/*</source>*/}
                     </audio>

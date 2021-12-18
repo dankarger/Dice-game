@@ -230,3 +230,4 @@ export default DiceGame
 // TODO:animations
 // TODO:Local storage
 // TODO:clean assets and code
+// TODO:add playlist to audio and next sog play

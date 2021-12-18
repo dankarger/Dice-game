@@ -29,9 +29,18 @@ button:active {
 }
 
 .Button-hold-turn, .Button-roll-dice {
+    min-width:100px;
     width: 50%;
     padding:1rem;
     background: rgba(31, 29, 29, 0.55);
     font-family: 'Nunito', sans-serif;
+    white-space: nowrap;
+
+}
+
+@media only screen and (max-width: 600px) {
+    button {
+        font-size: calc(1rem );
+    }
 
 }

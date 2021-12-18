@@ -21,8 +21,6 @@ img {
     /*visibility: hidden;*/
     overflow: hidden;
 
-
-
 }
 
 
@@ -45,4 +43,12 @@ img {
         opacity: 1;
         transform: translateX(0);;
     }
+}
+
+
+@media only screen and (max-width: 1024px) {
+.Dices-div {
+    flex-direction: column;
+}
+
 }

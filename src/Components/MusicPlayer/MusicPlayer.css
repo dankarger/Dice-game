@@ -1,9 +1,17 @@
- .music-player {
+.MusicPlayer-audio-div {
+    position: absolute;
+    bottom: 0;
+    margin:0 auto
+
+}
+
+.music-player {
     opacity: 0.2;
     filter: brightness(80%);
     transition: 200ms ease-in-out;
      color:white;
      background: transparent;
+
 }
 
   .music-player:hover {

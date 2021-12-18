@@ -18,6 +18,7 @@ class Ui extends React.Component {
     render() {
         const{dicesResult, callbackRoll,callBackHold,callBackNewGame,isGameOver}=this.props
         return (
+            <>
             <div className='Ui-div'>
                 <Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>
 
@@ -31,6 +32,7 @@ class Ui extends React.Component {
                 </div>
             <MusicPlayer />
             </div>
+            </>
         )
     }
 }

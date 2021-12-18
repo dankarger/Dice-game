@@ -91,3 +91,10 @@
 .current-player{
     color: rgba(222, 208, 59, 0.69);
 }
+
+@media only screen and (max-width: 600px) {
+   .Player-div {
+     min-width:200px;
+    }
+
+}
