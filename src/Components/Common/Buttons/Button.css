@@ -24,7 +24,7 @@ button:active {
     padding:1rem;
     font-family: 'Nunito', sans-serif;
     position: relative;
-    z-index: 1600;
+    z-index: 2900;
     white-space: nowrap;
 
 
@@ -48,3 +48,4 @@ button:active {
         background: rgba(0, 0, 0, 0.62);
     }
 }
+
