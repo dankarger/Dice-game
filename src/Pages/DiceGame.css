@@ -12,10 +12,15 @@
     z-index: 1;
 /*/assets/images/dice-back.png*/
 }
+
 .DiceGame-content::after {
     content: '';
 
     background:url('../../public/assets/images/background8.jpeg')no-repeat center center/cover;
+    background:url('../../public/assets/images/background9.jpeg')no-repeat center center/cover;
+    background:url('../../public/assets/images/background11.jpeg')no-repeat center center/cover;
+
+
 
     position: absolute;
     width: 100%;
@@ -23,8 +28,9 @@
     z-index: -10;
     top:0;
     left:0;
-
 }
+
+
 
 .DiceGame-board-div {
     width:100%;

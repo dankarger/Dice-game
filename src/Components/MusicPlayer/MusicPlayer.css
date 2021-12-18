@@ -1,0 +1,6 @@
+.audio-div {
+
+}
+.audio-div:hover {
+    filter: brightness(70%);
+}
