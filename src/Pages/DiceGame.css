@@ -12,28 +12,14 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    /*min-width:500px;*/
     z-index: 1;
     top:0;
     left:0;
 }
 
-
-.DiceGame-background-img-div::before {
-    /*content: '';*/
-    /*background: rgba(95, 158, 160, 0.22);*/
-    /*!*background: rgba(15, 63, 255, 0.31);*!*/
-    /*position: absolute;*/
-    /*width: 100vw;*/
-    /*height: 100vh;*/
-    /*z-index: -10;*/
-    /*top: 0;*/
-    /*left:0;*/
-}
-
 /*theme colors */
 .blue {
-    /*background: rgb(168, 30, 30);*/
+    filter:hue-rotate(50deg);
     background: rgba(15, 63, 255, 0.31);
     position: absolute;
     width: 100vw;
@@ -53,6 +39,7 @@
 }
 .dark {
     background: rgba(84, 84, 180, 0.22);
+    filter: grayscale(70%);
     position: absolute;
     width: 100vw;
     height: 100vh;

@@ -85,6 +85,8 @@
 
 .Opening-themes-div h2 {
     text-align: center;
+    opacity: 0.8;
+    font-size: calc(1.5rem+ 2vw);
 }
 
 .Opening-themes-div div {
@@ -95,6 +97,7 @@
     text-align: center;
     padding: 1rem;
     margin: 5px;
+    opacity: 0.7;
 
 }
 
@@ -216,5 +219,11 @@
     .Opening-page-buttons-div button {
         margin: 0.5rem;
         padding: 0.5rem;
+    }
+    .Opening-themes-div {
+        flex-direction: column;
+    }
+    .Opening-themes-div input {
+        height: 1rem;
     }
 }

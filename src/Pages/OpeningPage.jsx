@@ -47,7 +47,7 @@ class OpeningPage extends React.Component {
                             <input type="radio" id="themes" name="drone" value="huey"
                                    onClick={() => this.getThemeColor('blue')}
                             />
-                            <label htmlFor="themes">Blue</label>
+                            <label htmlFor="themes">Purple</label>
                         </div>
                         <div onClick={() => this.getThemeColor('classic')}>
                             <input type="radio" id="themes" name="drone" value="classic"
