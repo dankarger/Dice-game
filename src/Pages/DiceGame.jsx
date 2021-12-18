@@ -204,8 +204,14 @@ class DiceGame extends React.Component {
     }
 
     handleChooseTheme =(color) => {
-        return color
+        this.setState({themeColor:color})
+        console.log('kkk',color)
+        // return color
+        this.injectColor(color)
     }
+    injectColor=(color)=>{
+        if(color) return color
+        }
     render(){
         const{player1,player2,dicesResult
             ,gameOver,message,isGameOver
@@ -224,7 +230,7 @@ class DiceGame extends React.Component {
             <div className='DiceGame-content '>
                 <div className={this.state.player1.isTurn?"DiceGame-background-img-div ":"DiceGame-background-img-div flip" }>
                     <div className={this.state.player1.isTurn?" ":" flip" }>
-
+                    <div className={this.state.themeColor}>
                     <h1 className='DiceGame-header'>DICE GAME</h1>
 
                         <div className="DiceGame-board-div">
@@ -248,6 +254,7 @@ class DiceGame extends React.Component {
                                          isTurn ={player2.isTurn} />
                         </div>
                         <div className={gameOver?"DiceGame-winning-message": '.DiceGame-winning-message  .DiceGame-winning-message-show'}>  <h1>{message}</h1> </div>
+                    </div>
                     </div>
                 </div>
                 {this.handleShowMessage()}

@@ -4,12 +4,22 @@ import Button from "../Components/Common/Buttons/Button";
 
 
 class OpeningPage extends React.Component {
-    state={isGameOn:false,isOpeningPage:this.props.isOpeneningPage,isGameStart: this.props.isGameStart}
+    state={isGameOn:false,isOpeningPage:this.props.isOpeningPageProp,
+        isGameStart: this.props.isGameStart, themeColor:'blue'}
 
     showOpeningPage=()=>{
         this.setState({isOpeningPage:true})
 
     }
+    getThemeColor=(color)=> {
+        console.log('coooloooor',color)
+        this.setState({
+            themeColor:color
+        })
+        this.props.chooseThemeCallBack(color)
+
+    }
+
     startGame =()=> {
       this.setState({
           isGameOn:true,
@@ -30,16 +40,23 @@ class OpeningPage extends React.Component {
                     {/*<Button name='Blue' callBack={()=>chooseThemeCallBack('blue')} classNameProp='Button-new-game '/>*/}
                     <div>
                         <input type="radio" id="themes" name="drone" value="huey"
-                               onClick={()=>chooseThemeCallBack('blue')}
+                               onClick={()=>this.getThemeColor('blue')}
                         />
                         <label htmlFor="themes">Blue</label>
                     </div>
                     <div>
-                        <input type="radio" id="themes" name="drone" value="turquize"
-                               onClick={()=>chooseThemeCallBack('turquize')}
+                        <input type="radio" id="themes" name="drone" value="classic"
+                               onClick={()=>this.getThemeColor('classic')}
                         />
                         <label htmlFor="themes"
-                               >Turquize</label>
+                               >Classic</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="themes" name="drone" value="dark"
+                               onClick={()=>this.getThemeColor('dark')}
+                        />
+                        <label htmlFor="themes"
+                        >Dark</label>
                     </div>
                 </div>
                 <div  onClick={
@@ -49,7 +66,7 @@ class OpeningPage extends React.Component {
                 }>
                     {/*<Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>*/}
                     <div onClick={this.startGame} className="Opening-page-buttons-div">
-                        <Button name='Short Game - 20 Points' callBack={()=>targetScoreCallBack(20)} classNameProp='Button-opening-button animation1'/>
+                        <Button name='Short Game - 20 Points' callBack={()=>targetScoreCallBack(20,)} classNameProp='Button-opening-button animation1'/>
                         <Button name='Medium Game - 50 Points' callBack={()=>targetScoreCallBack(50)} classNameProp='Button-opening-button animation2'/>
                         <Button name='Long Game  - 100 Points' callBack={()=>targetScoreCallBack(100)} classNameProp='Button-opening-button animation3'/>
                     </div>

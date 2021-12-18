@@ -20,9 +20,39 @@
 
 
 .DiceGame-background-img-div::before {
-    content: '';
+    /*content: '';*/
+    /*background: rgba(95, 158, 160, 0.22);*/
+    /*!*background: rgba(15, 63, 255, 0.31);*!*/
+    /*position: absolute;*/
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+    /*z-index: -10;*/
+    /*top: 0;*/
+    /*left:0;*/
+}
+
+/*theme colors */
+.blue {
+    /*background: rgb(168, 30, 30);*/
+    background: rgba(15, 63, 255, 0.31);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    top: 0;
+    left:0;
+}
+.classic {
     background: rgba(95, 158, 160, 0.22);
-    /*background: rgba(15, 63, 255, 0.31);*/
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    top: 0;
+    left:0;
+}
+.dark {
+    background: rgba(84, 84, 180, 0.22);
     position: absolute;
     width: 100vw;
     height: 100vh;
