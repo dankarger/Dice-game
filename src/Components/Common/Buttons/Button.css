@@ -23,6 +23,8 @@ button:active {
     background: rgba(7, 5, 5, 0.37);
     padding:1rem;
     font-family: 'Nunito', sans-serif;
+    position: relative;
+    z-index: 1500;
 
 }
 

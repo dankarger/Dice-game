@@ -168,7 +168,7 @@ class DiceGame extends React.Component {
                     <div className={this.state.player1.isTurn?" ":" flip" }>
 
                     <h1 className='DiceGame-header'>DICE GAME</h1>
-                        {gameOver}{message}
+
                         <div className="DiceGame-board-div">
                                 <Player  name={'Player1'}
                                          curentScore={player1.currentScore}

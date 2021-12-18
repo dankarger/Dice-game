@@ -1,5 +1,5 @@
 import React from "react";
-
+import './Message.css'
 
 
 class Message extends React.Component {
@@ -9,7 +9,9 @@ class Message extends React.Component {
     render() {
         return(
             <>
-            <h1>Message</h1>
+                <div className="Message-div">
+                     <h1>Message</h1>
+                </div>
             </>
         )
     }

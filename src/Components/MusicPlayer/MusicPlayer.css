@@ -1,6 +1,12 @@
-.audio-div {
-
+ .music-player {
+    opacity: 0.5;
+    filter: brightness(100%);
+    transition: 200ms ease-in-out;
+     color:white;
+     background: transparent;
 }
-.audio-div:hover {
-    filter: brightness(70%);
+
+  .music-player:hover {
+    filter: brightness(80%);
+    opacity: 0.9;
 }

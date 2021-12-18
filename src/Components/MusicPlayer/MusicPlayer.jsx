@@ -1,4 +1,5 @@
 import React  from 'react'
+import './MusicPlayer.css'
 
 class MusicPlayer extends React.Component {
 
@@ -28,8 +29,8 @@ class MusicPlayer extends React.Component {
         return (
             <>
                 {/*<button onClick={this.playSound}>Play</button>*/}
-                <div  id="audio-div">
-                    <audio id="music-player" controls>
+                <div  className="audio-div" aria-controls>
+                    <audio className="music-player" controls>
                         {/*<source className="track1" src={this.musicFilesList[1]} type="audio/ogg" data-track-number="1" />*/}
                         <source className="track1" src={this.musicFilesList[3]} type="audio/ogg" data-track-number="1" />
 
