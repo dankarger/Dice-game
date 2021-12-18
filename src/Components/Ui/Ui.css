@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /*padding-top:3rem;*/
+    padding-top:1rem;
     padding-bottom:1rem;
     border-radius: 20px;
     background: rgba(95, 158, 160, 0.14);
@@ -13,11 +13,15 @@
 .Ui-div:hover {
     opacity: 0.9;
 }
+.Ui-target-score-div {
+    margin-top:1rem;
+}
 .Ui-target-score-div h4{
     font-family: 'Nunito', sans-serif;
     font-size: calc(1rem + 2vw );
     color: rgba(107, 189, 164, 0.26);
     text-shadow: rgba(245, 245, 245, 0.21) 1px 1px 1px ;
+    white-space: nowrap;
 }
 
 .Ui-header {

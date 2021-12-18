@@ -22,11 +22,11 @@ class Ui extends React.Component {
         return (
             <>
             <div className='Ui-div'>
+
+                <Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>
                 <div className="Ui-target-score-div">
                     <h4>Target: {targetScoreProp}</h4>
                 </div>
-                <Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>
-
                 {/*<h1 className='Ui-header'>Turn: {playerTurn}</h1>*/}
                 {/*<div>*/}
                 {/*</div>*/}
