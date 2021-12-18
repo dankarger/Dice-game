@@ -8,8 +8,9 @@ import './DiceGame.css'
 
 class DiceGame extends React.Component {
     state = {
+        fadeIn:'fade-in',
         isOpeningPage: true,
-        themeColor:'blue',
+        themeColor:'classic',
         isGameStart:false,
         isMessageDouble6:false,
         isGameOver:false,
@@ -171,6 +172,7 @@ class DiceGame extends React.Component {
         // this.setState({isGameStart:true});
         this.setState(
             {
+                fadeIn:'fade-in',
                 isGameStart:true,
                 isOpeningPage: true,
                 isGameOn:false,
@@ -189,7 +191,8 @@ class DiceGame extends React.Component {
         this.player2Object.currentScore=0;
         this.player2Object.totalScore=0;
         this.player2Object.isTurn=false;
-        this.updatePlayersStates()
+        this.updatePlayersStates();
+        this.fadeIn();
     }
     handleTargetScore =(target)=>{
         this.playSound(this.soundsList.buttonSound)
@@ -212,6 +215,15 @@ class DiceGame extends React.Component {
     injectColor=(color)=>{
         if(color) return color
         }
+
+    fadeIn=()=>{
+        console.log(this.state.fadeIn)
+        this.setState({fadeIn:'fade-in'})
+        setTimeout(()=>{
+            this.setState({fadeIn:''})
+        },2000)
+
+    }
     render(){
         const{player1,player2,dicesResult
             ,gameOver,message,isGameOver
@@ -227,10 +239,10 @@ class DiceGame extends React.Component {
                          showOpeningPage={this.showOpeningPage()}
 
             />
-            <div className='DiceGame-content '>
+            <div className= {this.state.fadeIn + 'DiceGame-content'}>
                 <div className={this.state.player1.isTurn?"DiceGame-background-img-div ":"DiceGame-background-img-div flip" }>
                     <div className={this.state.player1.isTurn?" ":" flip" }>
-                    <div className={this.state.themeColor}>
+                    <div className={this.state.themeColor }>
                     <h1 className='DiceGame-header'>DICE GAME</h1>
 
                         <div className="DiceGame-board-div">

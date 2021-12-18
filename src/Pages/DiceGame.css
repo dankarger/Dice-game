@@ -124,8 +124,12 @@
     /*font-size: calc(10rem * 35vw);*/
     letter-spacing: 5px;
 }
+.fade-in {
+    opacity: 0;
+}
 
 /*animations*/
+
 
 @keyframes fade-in {
     to {

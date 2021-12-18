@@ -12,7 +12,7 @@ class OpeningPage extends React.Component {
 
     }
     getThemeColor=(color)=> {
-        console.log('coooloooor',color)
+         this.playSound('/assets/sounds/soft-button2.wav')
         this.setState({
             themeColor:color
         })
@@ -28,7 +28,10 @@ class OpeningPage extends React.Component {
       })
 
 }
-
+    playSound(sound) {
+        let music = new Audio(sound);
+        music.play();
+    }
     render(){
         const {targetScoreCallBack, chooseThemeCallBack,isOpeningPageProp,}=this.props
         return (
@@ -36,22 +39,23 @@ class OpeningPage extends React.Component {
             <div >
                 <h1   >DICE GAME </h1>
                 <div className="Opening-themes-div">
+                    <hr/>
                     <h2>Choose Themes</h2>
                     {/*<Button name='Blue' callBack={()=>chooseThemeCallBack('blue')} classNameProp='Button-new-game '/>*/}
-                    <div>
+                    <div onClick={()=>this.getThemeColor('blue')}>
                         <input type="radio" id="themes" name="drone" value="huey"
                                onClick={()=>this.getThemeColor('blue')}
                         />
                         <label htmlFor="themes">Blue</label>
                     </div>
-                    <div>
+                    <div onClick={()=>this.getThemeColor('classic')}>
                         <input type="radio" id="themes" name="drone" value="classic"
-                               onClick={()=>this.getThemeColor('classic')}
+                             defaultChecked={true} onClick={()=>this.getThemeColor('classic')}
                         />
                         <label htmlFor="themes"
                                >Classic</label>
                     </div>
-                    <div>
+                    <div onClick={()=>this.getThemeColor('dark')}>
                         <input type="radio" id="themes" name="drone" value="dark"
                                onClick={()=>this.getThemeColor('dark')}
                         />
@@ -59,6 +63,7 @@ class OpeningPage extends React.Component {
                         >Dark</label>
                     </div>
                 </div>
+                <hr/>
                 <div  onClick={
                 ()=>{
                     this.startGame()
