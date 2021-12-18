@@ -7,9 +7,9 @@ import './DiceGame.css'
 
 class DiceGame extends React.Component {
     state = {
-        isMessage:true,
+        isMessageDouble6:false,
         gameOver:false,
-        message:null,
+        messageText:null,
         currentTurnPlayer:'player1',
         targetScore:20,
         dicesResult:[0,0],
@@ -44,7 +44,8 @@ class DiceGame extends React.Component {
 
     soundsList = {
         buttonSound:'/assets/sounds/switch.wav',
-        switchPlayersSound:'/assets/sounds/melodic3_affirm.wav',
+        switchPlayersSound:'/assets/sounds/message3.wav',
+        message:'/assets/sounds/melodic3_affirm.wav'
 
     }
 
@@ -69,6 +70,13 @@ class DiceGame extends React.Component {
         currentPlayer.currentScore=0;
         this.updatePlayersStates()
         this.switchTurn()
+        // this.setState({isMessage:true})
+        // setTimeout(()=>{
+        //     this.setState(
+        //         {isMessage:false}
+        //     )
+        // },700)
+        this.showMessage(700)
     }
     checkWin=()=>{
         const{targetScore,player1,player2}=this.state
@@ -123,16 +131,27 @@ class DiceGame extends React.Component {
         this.checkWin()
         this.switchTurn()
     }
+    showMessage =(time) => {
+        this.setState({isMessageDouble6:true,messageText:'✦ Double 6 ✦'})
+        setTimeout(()=>{
+            this.setState(
+                {isMessageDouble6:false}
+            )
+        },time)
+}
 
-    showMessage=()=>{
-        if(this.state.isMessage) {
+    handleShowMessage=()=>{
+        if(this.state.isMessageDouble6) {
+            this.playSound(this.soundsList.message)
             return (
                 <>
-                    <Message />
+                    {/*<Message message='✦ Double 6 ✦'/>*/}
+                    <Message message={this.state.messageText}/>
                 </>
             )
         }
     }
+
 
     handleNewGame=()=>{
         this.playSound(this.soundsList.buttonSound)
@@ -187,7 +206,7 @@ class DiceGame extends React.Component {
                         <div className={gameOver?"DiceGame-winning-message": '.DiceGame-winning-message  .DiceGame-winning-message-show'}>  <h1>{message}</h1> </div>
                     </div>
                 </div>
-                {this.showMessage()}
+                {this.handleShowMessage()}
             </div>
         )
     }

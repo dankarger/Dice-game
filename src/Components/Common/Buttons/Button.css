@@ -29,7 +29,7 @@ button:active {
 }
 
 .Button-hold-turn, .Button-roll-dice {
-
+    width: 50%;
     padding:1rem;
     background: rgba(31, 29, 29, 0.55);
     font-family: 'Nunito', sans-serif;

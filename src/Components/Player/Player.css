@@ -7,6 +7,7 @@
     flex-direction: column;
     font-family: 'Nunito', sans-serif;
     background: rgba(95, 158, 160, 0.14);
+    padding-top:2rem;
 }
 
 .Player-div:hover {
@@ -14,21 +15,13 @@
 }
 .Player-name {
     width:100%;
-    /*height:100%;*/
-    /*border:2px solid transparent;*/
     text-shadow: rgba(0, 0, 0, 0.29) 1px 1px 1px ;
-    /*box-shadow:  1px 1px 20px grey;*/
     text-align: center;
-    /*font-family: 'Raleway', sans-serif;*/
     font-family: 'Nunito', sans-serif;
     color: rgba(238, 234, 234, 0.68);
-    /*margin-top:10px;*/
-    /*margin-top:2px;*/
     border-radius: 20px;
-    /*display: flex;*/
     font-weight: 800;
-
-
+    /*margin-top:2rem;*/
 }
 .Player-isTurn {
     width:100%;
@@ -36,9 +29,9 @@
     text-align: center;
     font-family: 'Nunito', sans-serif;
     color: rgba(222, 208, 59, 0.69);
-    transition: 200ms ease-in;
+    transition: 100ms ease-in;
     border-radius: 20px;
-
+    /*margin-top:2rem;*/
 }
 
 .Player-score-div {
@@ -66,7 +59,7 @@
 .Player-score {
     font-size: calc(2rem  + 2.5vw );
     color: rgb(199, 194, 194);
-    transition: 1s ease-in-out;
+    transition: 100ms ease-in-out;
 
 
 }
