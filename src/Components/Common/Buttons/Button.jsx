@@ -4,10 +4,10 @@ import './Button.css'
 class Button extends React.Component {
 
     render() {
-        const{name,callBack,classNameProp}=this.props
+        const{name,callBack,classNameProp,disabledProp}=this.props
         return(
             <>
-            <button onClick={()=>callBack()} className={classNameProp}> {name} </button>
+            <button onClick={()=>callBack()} className={classNameProp} disabled={disabledProp}> {name} </button>
             </>
         )
     }

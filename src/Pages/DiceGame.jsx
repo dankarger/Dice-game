@@ -90,7 +90,9 @@ class DiceGame extends React.Component {
     winGame(winner){
         console.log('winner',winner)
         this.setState({messageText:winner +" is the Winner",
-                isGameOver:true}
+                isGameOver:true,
+                dicesResult:[0,0],
+            }
             )
 
     }
@@ -153,15 +155,12 @@ class DiceGame extends React.Component {
         }
         if(this.state.isGameOver) {
             this.playSound(this.soundsList.win)
-
             return (
                 <>
                     {/*<Message message='✦ Double 6 ✦'/>*/}
                     <Message message={this.state.messageText}/>
                 </>
             )
-
-
         }
     }
 
@@ -170,8 +169,9 @@ class DiceGame extends React.Component {
         this.playSound(this.soundsList.buttonSound)
         this.setState(
             {
-            gameOver:false,
-            message:null,
+            isMessageDouble6:false,
+            isGameOver:false,
+            messageText:null,
             currentTurnPlayer:'player1',
             targetScore:20,
             dicesResult:[0,0],
@@ -192,7 +192,7 @@ class DiceGame extends React.Component {
     }
 
     render(){
-        const{player1,player2,dicesResult,gameOver,message} = this.state
+        const{player1,player2,dicesResult,gameOver,message,isGameOver} = this.state
 
         return(
             <div className={this.state.player1.isTurn?'DiceGame-content ' :'DiceGame-content ' }>
@@ -210,7 +210,9 @@ class DiceGame extends React.Component {
                                          dicesResult = {dicesResult}
                                          callbackRoll ={this.handleRollDices}
                                          callBackHold = {this.handleHoldTurn}
-                                         callBackNewGame={this.handleNewGame}/>
+                                         callBackNewGame={this.handleNewGame}
+                                         isGameOver = {isGameOver}
+                                   />
                                 <Player name={'Player2'}
                                          curentScore={player2.currentScore}
                                          totalScore ={player2.totalScore}
