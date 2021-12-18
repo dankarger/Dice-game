@@ -1,12 +1,13 @@
 import React from "react";
 import Player from "../Components/Player/Player";
 import Ui from "../Components/Ui/Ui";
-
+import Message from "../Components/Message/Message";
 
 import './DiceGame.css'
 
 class DiceGame extends React.Component {
     state = {
+        isMessage:true,
         gameOver:false,
         message:null,
         currentTurnPlayer:'player1',
@@ -122,6 +123,17 @@ class DiceGame extends React.Component {
         this.checkWin()
         this.switchTurn()
     }
+
+    showMessage=()=>{
+        if(this.state.isMessage) {
+            return (
+                <>
+                    <Message />
+                </>
+            )
+        }
+    }
+
     handleNewGame=()=>{
         this.playSound(this.soundsList.buttonSound)
         this.setState(
@@ -175,6 +187,7 @@ class DiceGame extends React.Component {
                         <div className={gameOver?"DiceGame-winning-message": '.DiceGame-winning-message  .DiceGame-winning-message-show'}>  <h1>{message}</h1> </div>
                     </div>
                 </div>
+                {this.showMessage()}
             </div>
         )
     }
