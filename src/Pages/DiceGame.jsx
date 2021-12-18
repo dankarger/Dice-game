@@ -195,9 +195,6 @@ class DiceGame extends React.Component {
 
 export default DiceGame
 
-// TODO: add newGame function
-// TODO:make empty dice
-// TODO:add music and sounds
 // TODO:Responsive
 // TODO: readme.md
 // TODO: themes
@@ -207,3 +204,4 @@ export default DiceGame
 // TODO:meta tags
 // TODO:normalize
 // TODO:animations
+// TODO:Local storage

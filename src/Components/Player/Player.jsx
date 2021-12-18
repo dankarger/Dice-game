@@ -6,7 +6,6 @@ class Player extends React.Component {
             name:'',
             currentScore:0,
           }
-
         playerName = this.props.name
 
          componentDidMount() {
@@ -26,7 +25,7 @@ class Player extends React.Component {
 
                     <div className="Player-score-div">
 
-                        <h2>Current Score :</h2>
+                        {/*<h2>Current Score :</h2>*/}
                         <h1>{this.props.curentScore}</h1>
                         <div className="Player-total-score">
                             <h2>Total: {this.props.totalScore}</h2>
