@@ -64,12 +64,10 @@ class DiceGame extends React.Component {
     }
 
     doubleSix=()=>{
-        console.log('66');
         const currentPlayer= this.getCurrentPlayer()
         currentPlayer.currentScore=0;
         this.updatePlayersStates()
         this.switchTurn()
-
     }
     checkWin=()=>{
         const{targetScore,player1,player2}=this.state
@@ -84,6 +82,7 @@ class DiceGame extends React.Component {
         this.setState({message:winner +" is the Winner",
             gameOver:true}
             )
+
     }
     updatePlayersStates =()=>{
         this.setState({
@@ -97,7 +96,6 @@ class DiceGame extends React.Component {
             this.setState(
                 {dicesResult:result}
             )
-            console.log(this.state.dicesResult)
             if(result===[6,6] || result[0]+result[1]===6) return this.doubleSix();
             const currentPlayer = this.getCurrentPlayer()
             currentPlayer.currentScore+= result[0]+result[1];;
@@ -153,23 +151,29 @@ class DiceGame extends React.Component {
         const{player1,player2,dicesResult,gameOver,message} = this.state
 
         return(
-            <div className='DiceGame-content '>
-                <h1 className='DiceGame-header'>DICE GAME</h1>
-                {gameOver}{message}
-                <div className="DiceGame-board-div">
-                        <Player  name={'Player1'}
-                                 curentScore={player1.currentScore}
-                                 totalScore ={player1.totalScore}
-                                 isTurn ={player1.isTurn} />
-                           <Ui playerTurn =  {this.getCurrentPlayer().name}
-                                 dicesResult = {dicesResult}
-                                 callbackRoll ={this.handleRollDices}
-                                 callBackHold = {this.handleHoldTurn}
-                                 callBackNewGame={this.handleNewGame}/>
-                        <Player name={'Player2'}
-                                 curentScore={player2.currentScore}
-                                 totalScore ={player2.totalScore}
-                                 isTurn ={player2.isTurn} />
+            <div className={this.state.player1.isTurn?'DiceGame-content ' :'DiceGame-content ' }>
+                <div className={this.state.player1.isTurn?"DiceGame-background-img-div ":"DiceGame-background-img-div flip" }>
+                    <div className={this.state.player1.isTurn?" ":" flip" }>
+
+                    <h1 className='DiceGame-header'>DICE GAME</h1>
+                        {gameOver}{message}
+                        <div className="DiceGame-board-div">
+                                <Player  name={'Player1'}
+                                         curentScore={player1.currentScore}
+                                         totalScore ={player1.totalScore}
+                                         isTurn ={player1.isTurn} />
+                                   <Ui playerTurn =  {this.getCurrentPlayer().name}
+                                         dicesResult = {dicesResult}
+                                         callbackRoll ={this.handleRollDices}
+                                         callBackHold = {this.handleHoldTurn}
+                                         callBackNewGame={this.handleNewGame}/>
+                                <Player name={'Player2'}
+                                         curentScore={player2.currentScore}
+                                         totalScore ={player2.totalScore}
+                                         isTurn ={player2.isTurn} />
+                        </div>
+                        <div className={gameOver?"DiceGame-winning-message": '.DiceGame-winning-message  .DiceGame-winning-message-show'}>  <h1>{message}</h1> </div>
+                    </div>
                 </div>
             </div>
         )
