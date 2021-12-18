@@ -10,25 +10,25 @@ class OpeningPage extends React.Component {
     startGame =()=> {
       this.setState({
           isGameOn:true,
-          isOpeningPage:false
+          isOpeningPage:false,
+          isGameStart:true
       },()=>console.log('opememg:',this.state.isOpeningPage))
 
 }
   componentDidUpdate(prevProps, prevState, snapshot) {
         // this.setState({isOpeningPage:this.props.isGameStart})
-      console.log('opememgdsasdasd:',this.props.isOpeneningGameProp)
+      // console.log('opememgdsasdasd:',this.props.isOpeneningGameProp)
   }
 
     render(){
         const {callBackNewGame,targetScoreCallBack, chooseThemeCallBack,isGameStart}=this.props
         return (
-            <div className={!this.state.isOpeningPage? 'Opening-page-content hide ':' Opening-page-content '}>
+            <div className={ this.state.isOpeningPage? 'Opening-page-content  ':' Opening-page-content hide'}>
             <div className=" ">
                 <h1   >DICE GAME </h1>
                 <div className="Opening-themes-div">
                     <h2>Choose Themes</h2>
                     {/*<Button name='Blue' callBack={()=>chooseThemeCallBack('blue')} classNameProp='Button-new-game '/>*/}
-
                     <div>
                         <input type="radio" id="themes" name="drone" value="huey"
                                onClick={()=>chooseThemeCallBack('blue')}
@@ -46,11 +46,9 @@ class OpeningPage extends React.Component {
                         <label htmlFor="themes"
                                >Turquize</label>
                     </div>
-
                 </div>
                 <div  onClick={
                 ()=>{
-
                     this.startGame()
                 }
                 }>

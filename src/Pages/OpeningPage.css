@@ -45,7 +45,7 @@
     display: none;
     opacity: 0.5;
     transform: translateX(0);
-    animation: fade-out 2s forwards ease-in-out;
+    animation: fade-out 3s forwards ease-in-out;
     /*animation: fade-in 2s forwards  ease-in-out;*/
 }
 .show {
