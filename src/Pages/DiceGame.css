@@ -1,6 +1,6 @@
 .DiceGame-content {
-    width:100vw;
-    height:100vh;
+    min-width:100vw;
+    min-height:100vh;
     box-sizing: border-box;
     background: rgba(143, 236, 69, 0.31);
 

@@ -40,6 +40,19 @@ button:active {
 
 }
 
+.Button-opening-button {
+    /*min-width:100px;*/
+    width: 90%;
+    /*height:10%;*/
+    padding:1rem;
+    background: rgba(31, 29, 29, 0.55);
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    z-index: 2900;
+    white-space: nowrap;
+
+}
+
 @media only screen and (max-width: 600px) {
     button {
         font-size: calc(1rem );

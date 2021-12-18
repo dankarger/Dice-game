@@ -54,9 +54,9 @@ class OpeningPage extends React.Component {
                 }>
                     {/*<Button name='New Game' callBack={callBackNewGame} classNameProp='Button-new-game '/>*/}
                     <div onClick={this.startGame} className="Opening-page-buttons-div">
-                        <Button name='Short Game - 20 Points' callBack={()=>targetScoreCallBack(20)} classNameProp='Button-new-game animation1'/>
-                        <Button name='Medium Game - 50 Points' callBack={()=>targetScoreCallBack(50)} classNameProp='Button-new-game animation2'/>
-                        <Button name='Long Game  - 100 Points' callBack={()=>targetScoreCallBack(100)} classNameProp='Button-new-game animation3'/>
+                        <Button name='Short Game - 20 Points' callBack={()=>targetScoreCallBack(20)} classNameProp='Button-opening-button animation1'/>
+                        <Button name='Medium Game - 50 Points' callBack={()=>targetScoreCallBack(50)} classNameProp='Button-opening-button animation2'/>
+                        <Button name='Long Game  - 100 Points' callBack={()=>targetScoreCallBack(100)} classNameProp='Button-opening-button animation3'/>
                     </div>
 
                 </div>
