@@ -69,9 +69,7 @@ class OpeningPage extends React.Component {
                             <Button name='Long Game  - 100 Points' callBack={() => targetScoreCallBack(100)}
                                     classNameProp='Button-opening-button animation3'/>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         )
