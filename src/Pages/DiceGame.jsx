@@ -49,7 +49,8 @@ class DiceGame extends React.Component {
 
     soundsList = {
         buttonSound: '/assets/sounds/switch.wav',
-        switchPlayersSound: '/assets/sounds/message3.wav',
+        softButton:'/assets/sounds/soft-button2.wav',
+        switchPlayersSound: '/assets/sounds/message4.wav',
         message: '/assets/sounds/melodic3_affirm.wav',
         win: '/assets/sounds/win.wav'
 
@@ -212,7 +213,7 @@ class DiceGame extends React.Component {
     }
 
     handleChooseTheme = (color) => {
-        this.playSound(this.soundsList.buttonSound)
+        this.playSound(this.soundsList.softButton)
         this.setState({themeColor: color})
         this.injectColor(color)
     }
