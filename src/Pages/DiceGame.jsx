@@ -288,7 +288,12 @@ class DiceGame extends React.Component {
 
 export default DiceGame
 
+
+
+
+
+
+
 // TODO: readme.md
-// TODO:meta tags
 // TODO:normalize
 // TODO:Local storage
