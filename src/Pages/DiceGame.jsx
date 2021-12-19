@@ -114,7 +114,7 @@ class DiceGame extends React.Component {
         if (result === [6, 6] || result[0] + result[1] === 6) return this.doubleSix();
         const currentPlayer = this.getCurrentPlayer()
         currentPlayer.currentScore += result[0] + result[1];
-        ;
+
         this.updatePlayersStates()
         this.playSound(this.soundsList.buttonSound)
     }
@@ -137,6 +137,7 @@ class DiceGame extends React.Component {
                 }
             }
         )
+
         this.playSound(this.soundsList.switchPlayersSound)
         if (this.checkWin()) return
         this.switchTurn()
@@ -210,8 +211,6 @@ class DiceGame extends React.Component {
 
     handleChooseTheme = (color) => {
         this.setState({themeColor: color})
-        console.log('kkk', color)
-        // return color
         this.injectColor(color)
     }
     injectColor = (color) => {
@@ -244,7 +243,7 @@ class DiceGame extends React.Component {
                              showOpeningPage={this.showOpeningPage()}
                 />
 
-                <div className={this.state.fadeIn + 'DiceGame-content'}>
+                <div className='DiceGame-content'>
                     <div
                         className={this.state.player1.isTurn ? "DiceGame-background-img-div " : "DiceGame-background-img-div flip"}>
                         <div className={this.state.player1.isTurn ? " " : " flip"}>

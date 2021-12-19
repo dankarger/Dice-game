@@ -10,13 +10,14 @@
     flex-direction: column;
     transform: translateX(-300px);
     transition: 3s ease-in-out;
-    animation: fade-in 1s forwards ease-in-out;
-    padding: 1rem;
+    /*animation: fade-in 1s forwards ease-in-out;*/
+    padding: 2rem;
+    overflow: hidden;
 }
 
 .Opening-page-content h1 {
     z-index: 1500;
-    margin-bottom: 30vh;
+    margin-bottom: 15vh;
     letter-spacing: 10px;
     font-weight: 900;
     font-family: 'Nunito', sans-serif;
@@ -24,6 +25,7 @@
     color: whitesmoke;
     text-shadow: #2b4648 3px 3px 3px;
     text-align: center;
+    min-height: 0;
 }
 
 .Opening-page-content::before {
@@ -54,7 +56,7 @@
     transition: 3s ease-in-out;
     opacity: 1;
     display: block;
-    animation: fade-in 2s forwards ease-in-out;
+    animation: fade-in 500ms forwards ease-in-out;
 }
 
 .Opening-page-buttons-div {
@@ -142,21 +144,21 @@
 
 /*buttons animation */
 .animation1 {
-    animation: moving-to-center 2s forwards ease-in;
+    animation: moving-to-center 1s forwards ease-in;
     transform: translateX(600px) translateY(0);
     opacity: 0;
 
 }
 
 .animation2 {
-    animation: moving-to-center 2s forwards ease-in-out;
+    animation: moving-to-center 1.2s forwards ease-in-out;
     transform: translateX(-600px);
     opacity: 0;
 
 }
 
 .animation3 {
-    animation: moving-to-center 2s forwards ease-in-out;
+    animation: moving-to-center 1.4s forwards ease-in-out;
     transform: translateY(600px);
     opacity: 0;
 

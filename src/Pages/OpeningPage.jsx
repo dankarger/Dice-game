@@ -12,8 +12,11 @@ class OpeningPage extends React.Component {
         this.setState({isOpeningPage: true})
 
     }
+    buttonSound = {
+        sound:'../../public/assets/sounds/soft-button2.wav'
+    }
     getThemeColor = (color) => {
-        this.playSound('/assets/sounds/soft-button2.wav')
+        this.playSound(this.buttonSound.sound)
         this.setState({
             themeColor: color
         })
@@ -30,8 +33,8 @@ class OpeningPage extends React.Component {
     }
 
     playSound(sound) {
-        let music = new Audio(sound);
-        music.play();
+        let audio = new Audio(sound);
+        audio.play();
     }
 
     render() {

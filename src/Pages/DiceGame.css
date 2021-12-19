@@ -49,7 +49,6 @@
 }
 .DiceGame-background-img-div2::before {
     content: '';
-    /*background: rgba(95, 158, 160, 0.31);*/
     background: rgba(15, 63, 255, 0.31);
     position: absolute;
     width: 100vw;
@@ -58,7 +57,6 @@
     top: 0;
     left:0;
 }
-
 
 .DiceGame-board-div {
     width:100vw;
@@ -70,8 +68,11 @@
     z-index: 50;
 
 }
+
 .flip {
     transform: scaleX(-1);
+    padding: 0;
+    margin:0;
 }
 
 .DiceGame-header {
@@ -86,6 +87,7 @@
     letter-spacing: 4px;
     display: none;
 }
+
 .DiceGame-winning-message {
     justify-content: center;
     align-items: center;
@@ -98,15 +100,18 @@
     color:whitesmoke;
     z-index: 6;
 }
+
 .DiceGame-winning-message-show {
  display: flex;
 
 
 }
+
 .DiceGame-winning-message h1 {
     font-weight: 900;
     letter-spacing: 5px;
 }
+
 .fade-in {
     opacity: 0;
 }
