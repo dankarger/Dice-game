@@ -8,12 +8,12 @@ class OpeningPage extends React.Component {
         isGameOn: false, isOpeningPage: this.props.isOpeningPageProp,
         isGameStart: this.props.isGameStart, themeColor: 'blue'
     }
-    showOpeningPage = () => {
-        this.setState({isOpeningPage: true})
-
-    }
+    // showOpeningPage = () => {
+    //     this.setState({isOpeningPage: true})
+    //
+    // }
     buttonSound = {
-        sound:'../../public/assets/sounds/soft-button2.wav'
+        sound:'/assets/sounds/soft-button2.wav'
     }
     getThemeColor = (color) => {
         this.playSound(this.buttonSound.sound)
