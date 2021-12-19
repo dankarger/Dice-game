@@ -144,9 +144,11 @@ class DiceGame extends React.Component {
     }
     showMessage = (time) => {
         this.setState({isMessageDouble6: true, messageText: '✦ Double 6 ✦'})
+        this.setState({isGameOver:true})
         setTimeout(() => {
             this.setState(
-                {isMessageDouble6: false}
+                {isMessageDouble6: false,
+            isGameOver:false}
             )
         }, time)
     }
