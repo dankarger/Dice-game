@@ -212,6 +212,7 @@ class DiceGame extends React.Component {
     }
 
     handleChooseTheme = (color) => {
+        this.playSound(this.soundsList.buttonSound)
         this.setState({themeColor: color})
         this.injectColor(color)
     }

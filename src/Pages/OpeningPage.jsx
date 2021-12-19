@@ -8,15 +8,8 @@ class OpeningPage extends React.Component {
         isGameOn: false, isOpeningPage: this.props.isOpeningPageProp,
         isGameStart: this.props.isGameStart, themeColor: 'blue'
     }
-    // showOpeningPage = () => {
-    //     this.setState({isOpeningPage: true})
-    //
-    // }
-    buttonSound = {
-        sound:'/assets/sounds/soft-button2.wav'
-    }
+
     getThemeColor = (color) => {
-        this.playSound(this.buttonSound.sound)
         this.setState({
             themeColor: color
         })
@@ -32,11 +25,6 @@ class OpeningPage extends React.Component {
 
     }
 
-    playSound(sound) {
-        let audio = new Audio(sound);
-        audio.play();
-    }
-
     render() {
         const {targetScoreCallBack, isOpeningPageProp,} = this.props
         return (
@@ -50,7 +38,7 @@ class OpeningPage extends React.Component {
                             <input type="radio" id="themes" name="drone" value="huey"
                                    onClick={() => this.getThemeColor('blue')}
                             />
-                            <label htmlFor="themes">Purple</label>
+                            <label htmlFor="themes">Neon</label>
                         </div>
                         <div onClick={() => this.getThemeColor('classic')}>
                             <input type="radio" id="themes" name="drone" value="classic"
@@ -64,7 +52,7 @@ class OpeningPage extends React.Component {
                                    onClick={() => this.getThemeColor('dark')}
                             />
                             <label htmlFor="themes"
-                            >Dark</label>
+                            >Retro</label>
                         </div>
                     </div>
                     <hr/>
