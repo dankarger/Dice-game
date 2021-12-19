@@ -10,7 +10,7 @@ class Player extends React.Component {
          componentDidMount() {
          this.setState( {
              name:this.playerName,
-             CurrenrScore:0,
+             CurrentScore:0,
          })
     }
 

@@ -1,6 +1,8 @@
 # Dice Game 
 ## React, Js, CSS
 
+https://dice-game-dk.netlify.app/
+
 ###A game using react
 
 ###Features:
@@ -8,6 +10,7 @@
 - Customizable background and target score
 - Sound and Music
 
+![alt text](./public/assets/images/Dice9.png)
 
 ##Components :
 - Opening page - managing Button components and functions to set the game background and target score
@@ -44,4 +47,3 @@
   isTurn: false
   }
 
-##Props:
