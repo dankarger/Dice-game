@@ -62,7 +62,9 @@
 }
 .Player-score {
     font-size: calc(2rem  + 2.5vw );
-    color: rgb(199, 194, 194);
+    /*color: rgb(199, 194, 194);*/
+    color:transparent;
+    text-shadow: transparent 1px 1px 1px;
     transition: 100ms ease-in-out;
 }
 
