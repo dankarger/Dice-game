@@ -10,7 +10,13 @@ https://dice-game-dk.netlify.app/
 - Customizable background and target score
 - Sound and Music
 
+![alt text](./public/assets/images/dice13.png)
+
 ![alt text](./public/assets/images/Dice9.png)
+
+![alt text](./public/assets/images/dice11-flow.png)
+
+
 
 ##Components :
 - Opening page - managing Button components and functions to set the game background and target score

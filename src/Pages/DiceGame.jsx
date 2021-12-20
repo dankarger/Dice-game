@@ -280,7 +280,6 @@ class DiceGame extends React.Component {
                     </div>
                     {this.handleShowMessage()}
                 </div>
-
             </>
         )
     }
@@ -294,6 +293,5 @@ export default DiceGame
 
 
 
-// TODO: readme.md
 // TODO:normalize
 // TODO:Local storage
